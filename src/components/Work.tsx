@@ -42,13 +42,14 @@ const Work = () => {
       role: 'Software Engineer',
       period: 'May 2023 - Present',
       responsibilities: [
-        'Developed responsive client-facing web features using modern frontend frameworks',
+        'Contributed to complete frontend app rebuild using React, Vite, Radix, and React-Query',
+        'Developed new features and components for stakeholder-facing application',
+        'Built responsive client-facing web features using modern frontend frameworks',
         'Improved legacy codebase quality through clean code implementation',
         'Built intuitive user interfaces for new roofing module',
         'Created documentation for API integrations and reusable components',
         'Managed code repository using git version control',
-        'Conducted code reviews and provided technical feedback',
-        'Implemented new features and resolved software issues'
+        'Participated in code reviews and provided technical feedback'
       ]
     },
     {
@@ -90,7 +91,7 @@ const Work = () => {
   ];
 
   return (
-    <Flex direction="column" align="center" gap="4" style={{ padding: '2rem' }}>
+    <Flex direction="column" align="center" gap="4">
       <Heading size="5" style={{ marginBottom: '2rem' }}>Work Experience</Heading>
       {workExperiences.map((experience, index) => (
         <WorkExperience key={index} {...experience} />

@@ -1,0 +1,50 @@
+.project-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-gallery-item:hover .project-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Add hover effect for the image */
+.project-gallery-item:hover img,
+.project-gallery-item:hover [style*="background-image"] {
+  transform: scale(1.05);
+}
+
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.project-details.active {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .project-gallery-grid {
+    grid-template-columns: repeat(2, 250px);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-gallery-grid {
+    grid-template-columns: repeat(1, 250px);
+  }
+}

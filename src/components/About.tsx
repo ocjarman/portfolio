@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text } from '@radix-ui/themes';
 
 const About = () => {
   return (
-    <Flex direction="column" align="center" gap="6" style={{ padding: '3rem' }}>
+    <Flex direction="column" align="center" gap="6">
       <Heading size="6" style={{ marginBottom: '1rem' }}>About Me</Heading>
       <Box className="card" style={{ padding: '2rem', backgroundColor: 'var(--gray-1)', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
         <Flex 
