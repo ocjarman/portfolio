@@ -6,22 +6,27 @@ import '../styles/NavBar.css';
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <Flex className="nav-links" justify="center" gap="6">
-        <Link to="/" className="nav-link">
-          Home
+      <Flex className="nav-links" justify="between" align="center">
+        <Link to="/" className="brand-name">
+          Olivia Jarman
         </Link>
-        <Link to="/selected-work" className="nav-link">
-          Selected Work
-        </Link>
-        <Link to="/resume" className="nav-link">
-          Resume
-        </Link>
-        <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link">
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link">
-          LinkedIn
-        </a>
+        <Flex gap="6">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/selected-work" className="nav-link">
+            Selected Work
+          </Link>
+          <Link to="/resume" className="nav-link">
+            Resume
+          </Link>
+          <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link">
+            LinkedIn
+          </a>
+        </Flex>
       </Flex>
     </nav>
   );
