@@ -14,11 +14,11 @@ const NavBar = () => {
           <Link to="/" className="nav-link">
             Home
           </Link>
-          <Link to="/selected-work" className="nav-link">
-            Selected Work
+          <Link to="/about" className="nav-link">
+            About
           </Link>
-          <Link to="/resume" className="nav-link">
-            Resume
+          <Link to="/selected-work" className="nav-link">
+            Work
           </Link>
           <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link">
             GitHub
