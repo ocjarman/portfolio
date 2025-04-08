@@ -3,7 +3,8 @@ import { Box, Flex } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
-import Templates from './components/Templates'
+import SelectedWork from './components/SelectedWork'
+import Resume from './components/Resume'
 
 function Home() {
   return (
@@ -29,7 +30,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/templates" element={<Templates />} />
+        <Route path="/selected-work" element={<SelectedWork />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </Router>
   )

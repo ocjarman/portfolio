@@ -1,41 +1,27 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, FileText, Home } from 'lucide-react';
-import { Flex, Box } from '@radix-ui/themes';
+import { Github, Linkedin } from 'lucide-react';
+import { Flex } from '@radix-ui/themes';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <nav className="navbar">
-      <Box className="hamburger" onClick={toggleMenu}>
-        <Box className={`hamburger-line ${isOpen ? 'open' : ''}`}></Box>
-        <Box className={`hamburger-line ${isOpen ? 'open' : ''}`}></Box>
-        <Box className={`hamburger-line ${isOpen ? 'open' : ''}`}></Box>
-      </Box>
-      
-      <Flex direction="column" className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={() => setIsOpen(false)}>
-          <Home size={16} />
+      <Flex className="nav-links" justify="center" gap="6">
+        <Link to="/" className="nav-link">
           Home
         </Link>
-        <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer">
-          <Github size={16} />
+        <Link to="/selected-work" className="nav-link">
+          Selected Work
+        </Link>
+        <Link to="/resume" className="nav-link">
+          Resume
+        </Link>
+        <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link">
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer">
-          <Linkedin size={16} />
+        <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link">
           LinkedIn
         </a>
-        <Link to="/templates" onClick={() => setIsOpen(false)}>
-          <FileText size={16} />
-          Templates
-        </Link>
       </Flex>
     </nav>
   );
