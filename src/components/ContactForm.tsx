@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Heading } from '@radix-ui/themes';
 import { useState, ChangeEvent } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,19 +13,43 @@ const ContactForm = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Message from ${formData.firstName} ${formData.lastName} via Portfolio`;
-    const body = `From: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Address: ${formData.address}
+    setSending(true);
 
-Message:
-${formData.message}`;
-    window.location.href = `mailto:ocjarman@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    try {
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!, // Using environment variable
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, // Using environment variable
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY! // Using environment variable
+      );
+
+      setSubmitted(true);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputStyle = {
@@ -34,9 +59,9 @@ ${formData.message}`;
     fontSize: '0.95rem',
     width: '100%',
     backgroundColor: '#F0F0FF',
-    color: '#4040B2',
+    color: '#000000',
     '::placeholder': {
-      color: '#4040B2'
+      color: '#666666'
     }
   };
 
@@ -156,20 +181,22 @@ ${formData.message}`;
             
             <Button
               type="submit"
+              disabled={sending}
               style={{
                 backgroundColor: '#4040B2',
                 color: 'white',
                 border: 'none',
                 padding: '0.75rem',
                 borderRadius: '8px',
-                cursor: 'pointer',
+                cursor: sending ? 'not-allowed' : 'pointer',
                 transition: 'background-color 0.2s',
                 width: '180px',
                 margin: '0.5rem auto 0',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                opacity: sending ? 0.7 : 1
               }}
             >
-              Submit
+              {sending ? 'Sending...' : 'Submit'}
             </Button>
           </Flex>
         </form>
