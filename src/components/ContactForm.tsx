@@ -1,7 +1,6 @@
 import { Box, Button, Flex } from '@radix-ui/themes';
 import { useState, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import PageHero from './PageHero';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -82,7 +81,6 @@ const ContactForm = () => {
       paddingLeft: '2rem',
       paddingRight: '2rem'
     }}>
-      <PageHero title="Get In Touch" />
       <Box style={{ 
         maxWidth: '700px', 
         width: '90%', 
@@ -92,6 +90,15 @@ const ContactForm = () => {
         borderRadius: '12px',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
       }}>
+        <h1 style={{
+          fontSize: '2rem',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '2rem',
+          color: '#4040B2'
+        }}>
+          Get In Touch
+        </h1>
         <form onSubmit={handleSubmit}>
           <Flex direction="column" style={{ gap: '1.5rem' }}>
             <Flex style={{ gap: '2rem', width: '100%' }}>
