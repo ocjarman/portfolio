@@ -1,5 +1,5 @@
 import './App.css'
-import { Box, Flex, Button } from '@radix-ui/themes'
+import { Box, Flex } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
@@ -11,60 +11,14 @@ import { ProjectDetails, projects, ProjectProps } from './components/Projects'
 import './styles/ProjectGallery.css'
 import PageWrapper from './components/PageWrapper'
 import ContactForm from './components/ContactForm'
+import PageHero from './components/PageHero'
 
 function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
 
   return (
     <Flex direction="column" align="center" gap="4" style={{ width: '100%' }}>
-      <Box style={{
-        position: 'relative',
-        width: '100%',
-        height: '400px',
-        backgroundColor: '#E8E6F3', // Lilac color
-        marginBottom: '2rem',
-        borderRadius: '12px',
-        overflow: 'hidden'
-      }}>
-        {/* Hero banner placeholder - replace src with your image once added to public folder */}
-        <Box style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          textAlign: 'left',
-          zIndex: 1,
-          width: '100%',
-          padding: '0 2rem'
-        }}>
-          <h1 style={{ 
-            fontSize: '3.5rem',
-            marginBottom: '1rem',
-            color: 'var(--gray-12)'
-          }}>Olivia Jarman</h1>
-          <h2 style={{
-            fontSize: '1.8rem',
-            fontWeight: '400',
-            color: 'var(--gray-11)',
-            whiteSpace: 'nowrap'
-          }}>Frontend Software Engineer</h2>
-          <Button
-            onClick={() => window.location.href = '/contact'}
-            style={{
-              backgroundColor: '#646cff',
-              color: 'white',
-              border: 'none',
-              padding: '0.8rem 1.5rem',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              transition: 'background-color 0.2s',
-              marginTop: '2rem'
-            }}
-          >
-            Get in Touch
-          </Button>
-        </Box>
-      </Box>
+      <PageHero title="Olivia Jarman" subtitle="Frontend Software Engineer" />
 
       <Box className={`project-details ${selectedProject ? 'active' : ''}`} style={{ width: '100%' }}>
         {selectedProject && <ProjectDetails project={selectedProject} />}

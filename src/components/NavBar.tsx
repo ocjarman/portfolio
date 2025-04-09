@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Github, Linkedin } from 'lucide-react';
-import { Flex } from '@radix-ui/themes';
+import { Button, Flex } from '@radix-ui/themes';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
@@ -10,22 +10,42 @@ const NavBar = () => {
         <Link to="/" className="brand-name">
           Olivia Jarman
         </Link>
-        <Flex gap="6">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-          <Link to="/selected-work" className="nav-link">
-            Work
-          </Link>
-          <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link">
-            LinkedIn
-          </a>
+        <Flex align="center">
+          <Flex gap="6" align="center">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/about" className="nav-link">
+              About
+            </Link>
+            <Link to="/selected-work" className="nav-link">
+              Work
+            </Link>
+          </Flex>
+          <Flex gap="4" align="center" ml="8">
+            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
+              <Linkedin size={20} />
+            </a>
+            <Link to="/contact">
+              <Button
+                style={{
+                  backgroundColor: '#646cff',
+                  color: 'white',
+                  border: 'none',
+                  padding: '0.6rem 1.2rem',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.2s',
+                  marginLeft: '1rem'
+                }}
+              >
+                Get in Touch
+              </Button>
+            </Link>
+          </Flex>
         </Flex>
       </Flex>
     </nav>
