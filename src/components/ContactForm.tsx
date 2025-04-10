@@ -56,10 +56,10 @@ const ContactForm = () => {
   const inputStyle = {
     padding: '0.75rem',
     borderRadius: '8px',
-    border: 'none',
+    border: '1px solid #e0e0e0',
     fontSize: '0.95rem',
     width: '100%',
-    backgroundColor: '#F0F0FF',
+    backgroundColor: '#ffffff',
     color: '#000000',
     '::placeholder': {
       color: '#666666'
@@ -150,13 +150,13 @@ const ContactForm = () => {
             type="submit"
             disabled={sending}
             style={{
-              backgroundColor: '#4040B2',
-              color: 'white',
-              border: 'none',
+              backgroundColor: '#ffffff',
+              color: '#000000',
+              border: '1px solid #000000',
               padding: '0.75rem',
               borderRadius: '8px',
               cursor: sending ? 'not-allowed' : 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'all 0.2s ease',
               width: '180px',
               margin: '0.5rem auto 0',
               fontSize: '1rem',

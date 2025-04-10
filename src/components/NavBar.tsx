@@ -32,13 +32,13 @@ const NavBar = () => {
             <Link to="/contact">
               <Button
                 style={{
-                  backgroundColor: '#646cff',
-                  color: 'white',
-                  border: 'none',
+                  backgroundColor: '#ffffff',
+                  color: '#000000',
+                  border: '1px solid #000000',
                   padding: '0.6rem 1.2rem',
                   borderRadius: '8px',
                   cursor: 'pointer',
-                  transition: 'background-color 0.2s',
+                  transition: 'all 0.2s ease',
                   marginLeft: '1rem'
                 }}
               >

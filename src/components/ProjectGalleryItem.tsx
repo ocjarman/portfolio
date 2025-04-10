@@ -48,7 +48,7 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'rgba(232, 230, 243, 0.9)',
+          background: 'rgba(255, 255, 255, 0.95)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -57,7 +57,7 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
         <Text
           size="5"
           style={{
-            color: '#1a1a1a',
+            color: '#000000',
             textAlign: 'center',
             padding: '1rem',
             fontWeight: '500',

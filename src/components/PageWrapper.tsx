@@ -10,7 +10,7 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
   return (
     <div style={{ 
       minHeight: '100vh',
-      backgroundColor: '#E8E6F3',
+      backgroundColor: '#ffffff',
       paddingTop: '5rem'
     }}>
       <div style={{
@@ -21,7 +21,7 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
         <Box style={{ 
           backgroundColor: 'white',
           borderRadius: '12px',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
           padding: '2.5rem'
         }}>
           {title && (
@@ -30,7 +30,7 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
               fontWeight: 'bold',
               textAlign: 'center',
               marginBottom: '2rem',
-              color: '#4040B2'
+              color: '#000000'
             }}>
               {title}
             </h1>

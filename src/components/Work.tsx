@@ -14,22 +14,22 @@ interface WorkExperienceProps {
 
 const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps }) => {
   return (
-    <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: 'var(--gray-2)', borderRadius: '8px' }}>
+    <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
-          <Heading size="3">{experience.company}</Heading>
-          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.period}</Text>
+          <Heading size="3" style={{ color: '#000000' }}>{experience.company}</Heading>
+          <Text size="1" style={{ color: '#333333' }}>{experience.period}</Text>
         </Flex>
         <Flex direction="column" gap="1">
-          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.location}</Text>
-          <Text size="2" style={{ fontWeight: 500 }}>{experience.role}</Text>
+          <Text size="1" style={{ color: '#333333' }}>{experience.location}</Text>
+          <Text size="2" style={{ fontWeight: 500, color: '#000000' }}>{experience.role}</Text>
         </Flex>
         <Box style={{ marginTop: '0.75rem' }}>
           {experience.responsibilities.map((responsibility, index) => (
             <Text key={index} size="2" style={{ 
               marginBottom: '0.75rem', 
               lineHeight: '1.6', 
-              color: 'var(--gray-12)',
+              color: '#000000',
               display: 'block'
             }}>
               {responsibility}

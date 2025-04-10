@@ -19,7 +19,7 @@ const HomeHero = () => {
           fontWeight: '600',
           letterSpacing: '-0.04em',
           marginBottom: '1rem',
-          color: '#1a1a1a'
+          color: '#000000'
         }}
       >
         Olivia Jarman
@@ -30,7 +30,7 @@ const HomeHero = () => {
           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
           fontWeight: '400',
           letterSpacing: '-0.02em',
-          color: '#666'
+          color: '#333333'
         }}
       >
         Frontend Software Engineer
