@@ -1,6 +1,7 @@
 import { Box, Button, Flex } from '@radix-ui/themes';
 import { useState, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import PageWrapper from './PageWrapper';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -66,151 +67,118 @@ const ContactForm = () => {
   };
 
   return (
-    <Box style={{ 
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      minHeight: '100vh',
-      backgroundColor: '#E8E6F3',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      paddingTop: '6rem',
-      paddingBottom: '2rem',
-      paddingLeft: '2rem',
-      paddingRight: '2rem'
-    }}>
-      <Box style={{ 
-        maxWidth: '700px', 
-        width: '90%', 
-        margin: '0 auto',
-        padding: '2.5rem',
-        backgroundColor: 'white',
-        borderRadius: '12px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-      }}>
-        <h1 style={{
-          fontSize: '2rem',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '2rem',
-          color: '#4040B2'
-        }}>
-          Get In Touch
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <Flex direction="column" style={{ gap: '1.5rem' }}>
-            <Flex style={{ gap: '2rem', width: '100%' }}>
-              <Box style={{ width: '50%' }}>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => 
-                    setFormData({ ...formData, firstName: e.target.value })}
-                  required
-                  style={inputStyle}
-                />
-              </Box>
-              <Box style={{ width: '50%' }}>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => 
-                    setFormData({ ...formData, lastName: e.target.value })}
-                  required
-                  style={inputStyle}
-                />
-              </Box>
-            </Flex>
-            
-            <Flex style={{ gap: '2rem', width: '100%' }}>
-              <Box style={{ width: '50%' }}>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => 
-                    setFormData({ ...formData, email: e.target.value })}
-                  required
-                  style={inputStyle}
-                />
-              </Box>
-              <Box style={{ width: '50%' }}>
-                <input
-                  type="tel"
-                  placeholder="Phone"
-                  value={formData.phone}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => 
-                    setFormData({ ...formData, phone: e.target.value })}
-                  style={inputStyle}
-                />
-              </Box>
-            </Flex>
-
-            <Box style={{ width: '100%' }}>
+    <PageWrapper title="Get In Touch">
+      <form onSubmit={handleSubmit}>
+        <Flex direction="column" style={{ gap: '1.5rem' }}>
+          <Flex style={{ gap: '2rem', width: '100%' }}>
+            <Box style={{ width: '50%' }}>
               <input
                 type="text"
-                placeholder="Address"
-                value={formData.address}
+                placeholder="First Name"
+                value={formData.firstName}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => 
-                  setFormData({ ...formData, address: e.target.value })}
+                  setFormData({ ...formData, firstName: e.target.value })}
+                required
                 style={inputStyle}
               />
             </Box>
-            
-            <Box style={{ width: '100%' }}>
-              <textarea
-                placeholder="Type your message here"
-                value={formData.message}
-                onChange={(e: ChangeEvent<HTMLTextAreaElement>) => 
-                  setFormData({ ...formData, message: e.target.value })}
+            <Box style={{ width: '50%' }}>
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                  setFormData({ ...formData, lastName: e.target.value })}
                 required
-                style={{
-                  ...inputStyle,
-                  minHeight: '120px',
-                  resize: 'vertical',
-                  fontFamily: 'inherit'
-                }}
+                style={inputStyle}
               />
             </Box>
-            
-            <Button
-              type="submit"
-              disabled={sending}
-              style={{
-                backgroundColor: '#4040B2',
-                color: 'white',
-                border: 'none',
-                padding: '0.75rem',
-                borderRadius: '8px',
-                cursor: sending ? 'not-allowed' : 'pointer',
-                transition: 'background-color 0.2s',
-                width: '180px',
-                margin: '0.5rem auto 0',
-                fontSize: '1rem',
-                opacity: sending ? 0.7 : 1
-              }}
-            >
-              {sending ? 'Sending...' : 'Submit'}
-            </Button>
           </Flex>
-        </form>
-        
-        {submitted && (
-          <Box style={{ 
-            textAlign: 'center', 
-            marginTop: '1rem',
-            color: '#4CAF50',
-            fontSize: '1rem'
-          }}>
-            Thanks for submitting!
+          
+          <Flex style={{ gap: '2rem', width: '100%' }}>
+            <Box style={{ width: '50%' }}>
+              <input
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                  setFormData({ ...formData, email: e.target.value })}
+                required
+                style={inputStyle}
+              />
+            </Box>
+            <Box style={{ width: '50%' }}>
+              <input
+                type="tel"
+                placeholder="Phone"
+                value={formData.phone}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                  setFormData({ ...formData, phone: e.target.value })}
+                style={inputStyle}
+              />
+            </Box>
+          </Flex>
+
+          <Box style={{ width: '100%' }}>
+            <input
+              type="text"
+              placeholder="Address"
+              value={formData.address}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                setFormData({ ...formData, address: e.target.value })}
+              style={inputStyle}
+            />
           </Box>
-        )}
-      </Box>
-    </Box>
+          
+          <Box style={{ width: '100%' }}>
+            <textarea
+              placeholder="Type your message here"
+              value={formData.message}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => 
+                setFormData({ ...formData, message: e.target.value })}
+              required
+              style={{
+                ...inputStyle,
+                minHeight: '120px',
+                resize: 'vertical',
+                fontFamily: 'inherit'
+              }}
+            />
+          </Box>
+          
+          <Button
+            type="submit"
+            disabled={sending}
+            style={{
+              backgroundColor: '#4040B2',
+              color: 'white',
+              border: 'none',
+              padding: '0.75rem',
+              borderRadius: '8px',
+              cursor: sending ? 'not-allowed' : 'pointer',
+              transition: 'background-color 0.2s',
+              width: '180px',
+              margin: '0.5rem auto 0',
+              fontSize: '1rem',
+              opacity: sending ? 0.7 : 1
+            }}
+          >
+            {sending ? 'Sending...' : 'Submit'}
+          </Button>
+        </Flex>
+      </form>
+      
+      {submitted && (
+        <Box style={{ 
+          textAlign: 'center', 
+          marginTop: '1rem',
+          color: '#4CAF50',
+          fontSize: '1rem'
+        }}>
+          Thanks for submitting!
+        </Box>
+      )}
+    </PageWrapper>
   );
 };
 

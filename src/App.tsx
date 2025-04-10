@@ -1,5 +1,5 @@
 import './App.css'
-import { Box, Flex } from '@radix-ui/themes'
+import { Box } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
@@ -11,15 +11,14 @@ import { ProjectDetails, projects, ProjectProps } from './components/Projects'
 import './styles/ProjectGallery.css'
 import PageWrapper from './components/PageWrapper'
 import ContactForm from './components/ContactForm'
-import PageHero from './components/PageHero'
+import HomeHero from './components/HomeHero'
 
 function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
 
   return (
-    <Flex direction="column" align="center" gap="4" style={{ width: '100%' }}>
-      <PageHero title="Olivia Jarman" subtitle="Frontend Software Engineer" />
-
+    <PageWrapper>
+      <HomeHero />
       <Box className={`project-details ${selectedProject ? 'active' : ''}`} style={{ width: '100%' }}>
         {selectedProject && <ProjectDetails project={selectedProject} />}
       </Box>
@@ -37,7 +36,7 @@ function Home() {
           </div>
         ))}
       </div>
-    </Flex>
+    </PageWrapper>
   )
 }
 
@@ -45,14 +44,12 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <PageWrapper>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/selected-work" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactForm />} />
-        </Routes>
-      </PageWrapper>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactForm />} />
+      </Routes>
     </Router>
   )
 }
