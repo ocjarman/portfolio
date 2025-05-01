@@ -88,9 +88,6 @@ const WorkExperienceItem = ({
           src={experience.image} 
           alt={`${experience.company} workplace`}
           className="work-experience-image"
-          style={{
-            filter: 'grayscale(100%) contrast(200%) brightness(0)'
-          }}
         />
       ) : (
         <Box style={{ 

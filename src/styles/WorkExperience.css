@@ -29,12 +29,12 @@
   height: 80%;
   object-fit: contain;
   transition: transform 0.3s ease;
-  filter: grayscale(100%);
+  filter: grayscale(90%) contrast(110%) brightness(0.95);
 }
 
 .work-experience-item:hover .work-experience-image {
   transform: scale(1.05);
-  filter: grayscale(100%);
+  filter: grayscale(90%) contrast(110%) brightness(0.95);
 }
 
 .work-experience-overlay {
