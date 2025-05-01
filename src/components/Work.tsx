@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
 import PageWrapper from './PageWrapper';
 import { useState } from 'react';
+import { Github } from 'lucide-react';
 import '../styles/WorkExperience.css';
 
 interface WorkExperienceProps {
@@ -8,8 +9,9 @@ interface WorkExperienceProps {
   location: string;
   role: string;
   period: string;
-  responsibilities: string[];
+  responsibilities: (string | React.ReactElement)[];
   image?: string;
+  companyUrl?: string;
 }
 
 const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps }) => {
@@ -43,6 +45,22 @@ const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps
             </Text>
           ))}
         </Box>
+        {experience.companyUrl && (
+          <Text size="2" style={{ marginTop: '0.5rem' }}>
+            <a 
+              href={experience.companyUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                color: '#000000',
+                textDecoration: 'none',
+                fontWeight: 500
+              }}
+            >
+              {experience.companyUrl}
+            </a>
+          </Text>
+        )}
       </Flex>
     </Box>
   );
@@ -98,10 +116,29 @@ const workExperiences: WorkExperienceProps[] = [
     role: 'Software Engineer',
     period: 'May 2023 - Present',
     responsibilities: [
-      'As a Software Engineer at SITE Technologies, I lead frontend development efforts in a complete application rebuild using React, TypeScript, and modern frameworks. My focus is on creating intuitive user interfaces and implementing new features for our stakeholder-facing applications.',
-      'I drive code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git version control.'
+      'As a Software Engineer at SITE Technologies, I contribute to frontend development efforts in a complete application rebuild using React, TypeScript, and modern frameworks. My focus is on creating intuitive user interfaces and implementing new features for our stakeholder-facing applications.',
+      'I drive code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git version control.',
+      <Flex gap="2" align="center">
+        <a 
+          href="https://github.com/ojarmanST" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '4px',
+            color: '#000000',
+            textDecoration: 'none',
+            fontWeight: 500
+          }}
+        >
+          <Github size={16} />
+          GitHub
+        </a>
+      </Flex>
     ],
-    image: '/site-tech.jpg'
+    image: '/site-tech.jpg',
+    companyUrl: 'https://www.sitetechnologies.com/'
   },
   {
     company: 'SEO Scholars',
@@ -112,7 +149,8 @@ const workExperiences: WorkExperienceProps[] = [
       'During my time at SEO Scholars, I managed comprehensive educational programs for 11th-grade students while serving in dual roles as Program Manager and AmeriCorps VISTA Project Manager. I developed and implemented curriculum strategies specifically tailored to meet student needs.',
       'I fostered strong partnerships with teachers, parents, and community partners to create an effective collaborative learning environment that supported student success.'
     ],
-    image: '/seo-scholars.jpg'
+    image: '/seo-scholars.jpg',
+    companyUrl: 'https://www.seoscholars.org/'
   },
   {
     company: 'Uncommon Schools',
@@ -123,7 +161,8 @@ const workExperiences: WorkExperienceProps[] = [
       'As a Special Projects Coordinator at Uncommon Schools, I coordinated educational initiatives and school leadership programs while managing administrative operations. I created efficient systems to enhance overall school effectiveness.',
       'In addition, I maintained strong communication channels between staff and families, ensuring all stakeholders remained well-informed and actively engaged in the educational process.'
     ],
-    image: '/uncommon-schools.jpg'
+    image: '/uncommon-schools.jpg',
+    companyUrl: 'https://www.uncommonschools.org/'
   },
   {
     company: 'Teach For America',
@@ -134,7 +173,8 @@ const workExperiences: WorkExperienceProps[] = [
       'At Teach For America, I designed and implemented an engaging 10th-grade science curriculum that captured students\' imagination while meeting state standards. I created innovative teaching methods to improve student outcomes and academic success.',
       'I led cross-curricular learning initiatives and built strong relationships with students and families to support their educational journey.'
     ],
-    image: '/teach-for-america.jpg'
+    image: '/teach-for-america.jpg',
+    companyUrl: 'https://www.teachforamerica.org/'
   }
 ];
 

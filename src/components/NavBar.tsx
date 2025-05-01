@@ -37,7 +37,7 @@ const NavBar = () => {
                 style={{
                   backgroundColor: '#ffffff',
                   color: '#000000',
-                  border: '1px solid #000000',
+                  border: '0.5px solid #000000',
                   padding: '0.6rem 1.2rem',
                   borderRadius: '8px',
                   cursor: 'pointer',

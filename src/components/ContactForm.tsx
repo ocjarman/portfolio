@@ -160,7 +160,8 @@ const ContactForm = () => {
               width: '180px',
               margin: '0.5rem auto 0',
               fontSize: '1rem',
-              opacity: sending ? 0.7 : 1
+              opacity: sending ? 0.7 : 1,
+              fontFamily: "'Enriqueta', serif"
             }}
           >
             {sending ? 'Sending...' : 'Submit'}

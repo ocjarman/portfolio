@@ -29,11 +29,12 @@
   height: 80%;
   object-fit: contain;
   transition: transform 0.3s ease;
-  filter: grayscale(100%) contrast(200%) brightness(0);
+  filter: grayscale(100%);
 }
 
 .work-experience-item:hover .work-experience-image {
   transform: scale(1.05);
+  filter: grayscale(100%);
 }
 
 .work-experience-overlay {
@@ -42,7 +43,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(232, 230, 243, 0.4);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
