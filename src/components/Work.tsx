@@ -63,6 +63,9 @@ const WorkExperienceItem = ({
           src={experience.image} 
           alt={`${experience.company} workplace`}
           className="work-experience-image"
+          style={{
+            filter: 'grayscale(100%)'
+          }}
         />
       ) : (
         <Box style={{ 
@@ -132,7 +135,7 @@ const Work = () => {
   const [selectedExperience, setSelectedExperience] = useState<WorkExperienceProps | null>(null);
 
   return (
-    <PageWrapper>
+    <PageWrapper title="Work">
       <Box className={`work-experience-details ${selectedExperience ? 'active' : ''}`} style={{ width: '100%' }}>
         {selectedExperience && <WorkExperienceDetails experience={selectedExperience} />}
       </Box>

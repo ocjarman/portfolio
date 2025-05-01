@@ -29,6 +29,7 @@
   height: 80%;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: grayscale(100%);
 }
 
 .work-experience-item:hover .work-experience-image {

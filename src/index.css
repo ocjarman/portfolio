@@ -16,6 +16,7 @@
 }
 
 a {
+  font-family: "Enriqueta", serif;
   font-weight: 500;
   color: #000000;
   text-decoration: inherit;
@@ -46,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter", sans-serif;
+  font-family: "Enriqueta", serif;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -59,12 +60,12 @@ h1 {
 }
 
 button {
+  font-family: "Enriqueta", serif;
   border-radius: 8px;
   border: 1px solid #000000;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
