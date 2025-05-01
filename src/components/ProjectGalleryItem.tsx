@@ -61,7 +61,8 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
             textAlign: 'center',
             padding: '1rem',
             fontWeight: '500',
-            fontSize: '1.5rem'
+            fontSize: '1.5rem',
+            fontFamily: "'Enriqueta', serif"
           }}
         >
           {title === 'Codenames Online Board Game' ? 'Codenames' : 
