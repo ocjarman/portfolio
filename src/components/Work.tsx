@@ -71,7 +71,7 @@ const WorkExperienceItem = ({
           alt={`${experience.company} workplace`}
           className="work-experience-image"
           style={{
-            filter: 'grayscale(100%)'
+            filter: 'grayscale(100%) contrast(200%) brightness(0)'
           }}
         />
       ) : (

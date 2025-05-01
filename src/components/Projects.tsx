@@ -91,69 +91,6 @@ export const projects: ProjectProps[] = [
     githubUrl: 'https://github.com/2208-GS-Team-3/grace-shopper-team-three',
     liveUrl: 'https://rightroundrecords.us',
     imageUrl: '/rightround.jpg'
-  },
-  {
-    title: 'Future Project 1',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'TypeScript'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 2',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'Node.js'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 3',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'Express'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 4',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'MongoDB'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 5',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'GraphQL'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 6',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'AWS'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
-  },
-  {
-    title: 'Future Project 7',
-    period: 'Coming Soon',
-    description: ['Placeholder for future project'],
-    technologies: ['React', 'Firebase'],
-    githubUrl: 'https://github.com',
-    imageUrl: '',
-    backgroundColor: '#ffffff'
   }
 ];
 

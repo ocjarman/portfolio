@@ -21,6 +21,9 @@ const NavBar = () => {
             <Link to="/work" className="nav-link">
               Work
             </Link>
+            <Link to="/projects" className="nav-link">
+              Projects
+            </Link>
           </Flex>
           <Flex gap="4" align="center" ml="8">
             <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>

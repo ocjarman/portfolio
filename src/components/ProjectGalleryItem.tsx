@@ -36,6 +36,7 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
           backgroundImage: imageUrl ? `url(${imageUrl})` : 'none',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          filter: 'grayscale(100%)',
         }}
       />
       
