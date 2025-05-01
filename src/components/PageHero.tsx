@@ -27,7 +27,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => {
           margin: 0,
           textAlign: 'center',
           letterSpacing: '-0.02em',
-          textTransform: 'uppercase'
+          lineHeight: '1.1'
         }}>
           {title}
         </h1>

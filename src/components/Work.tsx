@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from '@radix-ui/themes';
+import { Box, Flex, Text } from '@radix-ui/themes';
 import PageWrapper from './PageWrapper';
 import { useState } from 'react';
 import '../styles/WorkExperience.css';
@@ -17,7 +17,14 @@ const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps
     <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
-          <Heading size="3" style={{ color: '#000000' }}>{experience.company}</Heading>
+          <h2 style={{ 
+            fontSize: '1.25rem',
+            fontWeight: '600',
+            color: '#000000',
+            letterSpacing: '-0.02em',
+            lineHeight: '1.1',
+            margin: 0
+          }}>{experience.company}</h2>
           <Text size="1" style={{ color: '#333333' }}>{experience.period}</Text>
         </Flex>
         <Flex direction="column" gap="1">
@@ -91,8 +98,8 @@ const workExperiences: WorkExperienceProps[] = [
     role: 'Software Engineer',
     period: 'May 2023 - Present',
     responsibilities: [
-      'Leading frontend development efforts in a complete application rebuild using React, TypeScript, and modern frameworks. Focused on creating intuitive user interfaces and new features for our stakeholder-facing applications. ',
-      'Drove code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git version control.'
+      'As a Software Engineer at SITE Technologies, I lead frontend development efforts in a complete application rebuild using React, TypeScript, and modern frameworks. My focus is on creating intuitive user interfaces and implementing new features for our stakeholder-facing applications.',
+      'I drive code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git version control.'
     ],
     image: '/site-tech.jpg'
   },
@@ -102,8 +109,8 @@ const workExperiences: WorkExperienceProps[] = [
     role: '11th Grade Program Manager & AmeriCorps VISTA Project Manager',
     period: 'June 2017 - April 2022',
     responsibilities: [
-      'Managed comprehensive educational programs for 11th-grade students while serving as both Program Manager and AmeriCorps VISTA Project Manager. Developed and implemented curriculum strategies tailored to meet student needs.',
-      'Fostered strong partnerships with teachers, parents, and community partners to create an effective collaborative learning environment.'
+      'During my time at SEO Scholars, I managed comprehensive educational programs for 11th-grade students while serving in dual roles as Program Manager and AmeriCorps VISTA Project Manager. I developed and implemented curriculum strategies specifically tailored to meet student needs.',
+      'I fostered strong partnerships with teachers, parents, and community partners to create an effective collaborative learning environment that supported student success.'
     ],
     image: '/seo-scholars.jpg'
   },
@@ -113,8 +120,8 @@ const workExperiences: WorkExperienceProps[] = [
     role: 'Special Projects Coordinator',
     period: 'June 2016 - June 2017',
     responsibilities: [
-      'Coordinated educational initiatives and school leadership programs while managing administrative operations. Created efficient systems to enhance school effectiveness.',
-      'Maintained strong communication channels between staff and families, ensuring all stakeholders remained well-informed and engaged.'
+      'As a Special Projects Coordinator at Uncommon Schools, I coordinated educational initiatives and school leadership programs while managing administrative operations. I created efficient systems to enhance overall school effectiveness.',
+      'In addition, I maintained strong communication channels between staff and families, ensuring all stakeholders remained well-informed and actively engaged in the educational process.'
     ],
     image: '/uncommon-schools.jpg'
   },
@@ -124,8 +131,8 @@ const workExperiences: WorkExperienceProps[] = [
     role: '10th Grade Science Teacher',
     period: 'May 2014 - June 2016',
     responsibilities: [
-      'Designed and implemented an engaging 10th-grade science curriculum that captured students\' imagination while meeting state standards. Created innovative teaching methods to improve student outcomes.',
-      'Led cross-curricular learning initiatives and built strong relationships with students and families to support academic success.'
+      'At Teach For America, I designed and implemented an engaging 10th-grade science curriculum that captured students\' imagination while meeting state standards. I created innovative teaching methods to improve student outcomes and academic success.',
+      'I led cross-curricular learning initiatives and built strong relationships with students and families to support their educational journey.'
     ],
     image: '/teach-for-america.jpg'
   }

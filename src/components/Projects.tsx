@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from '@radix-ui/themes';
+import { Box, Flex, Text } from '@radix-ui/themes';
 import { Github, ExternalLink } from 'lucide-react';
 import ProjectGalleryItem from './ProjectGalleryItem';
 import { useState } from 'react';
@@ -20,7 +20,14 @@ export const ProjectDetails = ({ project }: { project: ProjectProps }) => {
     <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
-          <Heading size="3" style={{ color: '#000000' }}>{project.title}</Heading>
+          <h2 style={{ 
+            fontSize: '1.25rem',
+            fontWeight: '600',
+            color: '#000000',
+            letterSpacing: '-0.02em',
+            lineHeight: '1.1',
+            margin: 0
+          }}>{project.title}</h2>
           <Text size="1" style={{ color: '#333333' }}>{project.period}</Text>
         </Flex>
         <Box style={{ marginTop: '0.75rem' }}>

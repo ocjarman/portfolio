@@ -27,10 +27,12 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
           {title && (
             <h1 style={{
               fontSize: '2rem',
-              fontWeight: 'bold',
+              fontWeight: '600',
               textAlign: 'center',
               marginBottom: '2rem',
-              color: '#000000'
+              color: '#000000',
+              letterSpacing: '-0.02em',
+              lineHeight: '1.1'
             }}>
               {title}
             </h1>
