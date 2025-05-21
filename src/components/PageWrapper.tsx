@@ -20,8 +20,6 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
       }}>
         <Box style={{ 
           backgroundColor: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
           padding: '2.5rem'
         }}>
           {title && (

@@ -3,6 +3,7 @@ import PageWrapper from './PageWrapper';
 import { useState } from 'react';
 import { Github } from 'lucide-react';
 import '../styles/WorkExperience.css';
+import AnimatedPage from './AnimatedPage';
 
 interface WorkExperienceProps {
   company: string;
@@ -179,21 +180,23 @@ const Work = () => {
   const [selectedExperience, setSelectedExperience] = useState<WorkExperienceProps | null>(null);
 
   return (
-    <PageWrapper title="Work">
-      <Box className={`work-experience-details ${selectedExperience ? 'active' : ''}`} style={{ width: '100%' }}>
-        {selectedExperience && <WorkExperienceDetails experience={selectedExperience} />}
-      </Box>
-      
-      <div className="work-experience-grid">
-        {workExperiences.map((experience, index) => (
-          <WorkExperienceItem
-            key={index}
-            experience={experience}
-            isSelected={selectedExperience?.company === experience.company}
-            onClick={() => setSelectedExperience(selectedExperience?.company === experience.company ? null : experience)}
-          />
-        ))}
-      </div>
+    <PageWrapper title="Work Experience">
+      <AnimatedPage>
+        <Box className={`work-experience-details ${selectedExperience ? 'active' : ''}`} style={{ width: '100%' }}>
+          {selectedExperience && <WorkExperienceDetails experience={selectedExperience} />}
+        </Box>
+        
+        <div className="work-experience-grid">
+          {workExperiences.map((experience, index) => (
+            <WorkExperienceItem
+              key={index}
+              experience={experience}
+              isSelected={selectedExperience?.company === experience.company}
+              onClick={() => setSelectedExperience(selectedExperience?.company === experience.company ? null : experience)}
+            />
+          ))}
+        </div>
+      </AnimatedPage>
     </PageWrapper>
   );
 };

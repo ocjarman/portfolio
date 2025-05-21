@@ -18,10 +18,8 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
         height: '250px',
         cursor: 'pointer',
         overflow: 'hidden',
-        borderRadius: '12px',
         transition: 'all 0.3s ease',
         transform: isSelected ? 'scale(0.95)' : 'scale(1)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
       }}
     >
       {/* Project image or background color */}

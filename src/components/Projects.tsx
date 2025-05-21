@@ -17,7 +17,7 @@ export interface ProjectProps {
 
 export const ProjectDetails = ({ project }: { project: ProjectProps }) => {
   return (
-    <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+    <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
           <h2 style={{ 
