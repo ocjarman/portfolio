@@ -4,6 +4,9 @@ import emailjs from '@emailjs/browser';
 import PageWrapper from './PageWrapper';
 import AnimatedPage from './AnimatedPage';
 
+// Initialize EmailJS with your public key
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -31,10 +34,10 @@ const ContactForm = () => {
       };
 
       await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!, // Using environment variable
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, // Using environment variable
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY! // Using environment variable
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setSubmitted(true);
