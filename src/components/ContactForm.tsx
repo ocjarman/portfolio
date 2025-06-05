@@ -5,7 +5,11 @@ import PageWrapper from './PageWrapper';
 import AnimatedPage from './AnimatedPage';
 
 // Initialize EmailJS with your public key
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+if (!publicKey) {
+  console.error('EmailJS public key is not defined in environment variables');
+}
+emailjs.init(publicKey);
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +29,13 @@ const ContactForm = () => {
     setSending(true);
 
     try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
+
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
         from_email: formData.email,
@@ -33,11 +44,17 @@ const ContactForm = () => {
         message: formData.message,
       };
 
+      console.log('Sending email with config:', {
+        serviceId,
+        templateId,
+        hasPublicKey: !!publicKey
+      });
+
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       );
 
       setSubmitted(true);
@@ -51,7 +68,7 @@ const ContactForm = () => {
       });
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert('Failed to send message. Please try again.');
+      alert('Failed to send message. Please try again. Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
     } finally {
       setSending(false);
     }
