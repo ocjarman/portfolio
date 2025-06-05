@@ -64,7 +64,7 @@ export const projects: ProjectProps[] = [
     technologies: ['Python', 'Oura Ring API', 'TextBelt API', 'Environment Variables', 'Scheduling System'],
     githubUrl: 'https://github.com/ocjarman/assistant.git',
     backgroundColor: '#ffffff',
-    imageUrl: '/assistant.jpg'
+    imageUrl: '/portfolio/assistant.jpg'
   },
   {
     title: 'Codenames Online Board Game',
@@ -77,7 +77,7 @@ export const projects: ProjectProps[] = [
     technologies: ['TypeScript', 'React', 'Redux', 'Firebase', 'Node', 'Express', 'PostgreSQL', 'Sequelize', 'CSS', 'Render'],
     githubUrl: 'https://github.com/2208-Capstone-Team-2/codenames',
     liveUrl: 'https://codenames-0nt7.onrender.com/',
-    imageUrl: '/codenames.jpg'
+    imageUrl: '/portfolio/codenames.jpg'
   },
   {
     title: 'Right Round Records',
@@ -90,7 +90,7 @@ export const projects: ProjectProps[] = [
     technologies: ['OAuth', 'React', 'Redux', 'Node', 'Express', 'PostgreSQL', 'Sequelize', 'CSS', 'HTML', 'Material-UI', 'Discogs API'],
     githubUrl: 'https://github.com/2208-GS-Team-3/grace-shopper-team-three',
     liveUrl: 'https://rightroundrecords.us',
-    imageUrl: '/rightround.jpg'
+    imageUrl: '/portfolio/rightround.jpg'
   }
 ];
 

@@ -24,7 +24,7 @@ const About = () => {
             boxShadow: '0 3px 6px rgba(0,0,0,0.1)'
           }}>
             <img 
-              src="/profile-image.jpg" 
+              src="/portfolio/profile-image.jpg" 
               alt="Olivia" 
               style={{
                 width: '100%',
