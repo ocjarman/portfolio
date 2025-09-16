@@ -1,7 +1,7 @@
 import './App.css';
 import '@radix-ui/themes/styles.css';
-import { Theme } from '@radix-ui/themes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeProvider';
 import NavBar from './components/NavBar';
 import Work from './components/Work';
 import About from './components/About';
@@ -14,7 +14,7 @@ function Home() {
 
 function App() {
   return (
-    <Theme appearance="inherit">
+    <ThemeProvider>
       <Router basename="/portfolio">
         <NavBar />
         <Routes>
@@ -24,7 +24,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Router>
-    </Theme>
+    </ThemeProvider>
   );
 }
 
