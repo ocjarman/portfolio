@@ -20,7 +20,10 @@ const ProjectsPage = () => {
           <Flex gap="4" justify="center">
             {projects.map((project, index) => (
               <Flex key={index}>
-                <Button onClick={() => setSelectedProject(project)}>
+                <Button
+                  variant="soft"
+                  onClick={() => setSelectedProject(project)}
+                >
                   {project.title}
                 </Button>
               </Flex>
