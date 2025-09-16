@@ -1,6 +1,8 @@
 .project-overlay {
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 .project-gallery-item {
   color: var(--gray-12);
@@ -15,7 +17,7 @@
 
 /* Add hover effect for the image */
 .project-gallery-item:hover img,
-.project-gallery-item:hover [style*="background-image"] {
+.project-gallery-item:hover [style*='background-image'] {
   transform: scale(1.05);
 }
 
