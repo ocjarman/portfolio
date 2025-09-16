@@ -2,24 +2,10 @@ import { Link } from 'react-router-dom';
 import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
 import { Button, Flex } from '@radix-ui/themes';
 import '../styles/NavBar.css';
-import { useEffect, useState } from 'react';
-import { Theme, applyTheme, getInitialTheme } from '../lib/utils';
+import { useTheme } from './ThemeProvider';
 
 const NavBar = () => {
-  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
-
-  useEffect(() => {
-    applyTheme(theme);
-    try {
-      localStorage.setItem('theme', theme);
-    } catch {
-      // ignore storage errors
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="navbar">
@@ -43,16 +29,30 @@ const NavBar = () => {
             </Link>
           </Flex>
           <Flex gap="4" align="center" ml="8">
-
-            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
+            <a
+              href="https://github.com/ocjarman"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link flex items-center"
+            >
               <CodeIcon size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
+            <a
+              href="https://www.linkedin.com/in/oliviajarman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link flex items-center"
+            >
               <BriefcaseBusinessIcon size={20} />
             </a>
-            <Button variant="ghost" aria-label="Toggle theme" className="theme-toggle" onClick={toggleTheme}>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Toggle theme"
+              className="button-theme-toggle"
+              onClick={toggleTheme}
+            >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-              
             </Button>
           </Flex>
         </Flex>
@@ -61,4 +61,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar; 
+export default NavBar;

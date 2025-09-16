@@ -1,20 +1,20 @@
-import './App.css'
-import '@radix-ui/themes/styles.css'
-import { Theme } from '@radix-ui/themes'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar'
-import Work from './components/Work'
-import About from './components/About'
-import HomeHero from './components/HomeHero'
-import ProjectsPage from './components/ProjectsPage'
+import './App.css';
+import '@radix-ui/themes/styles.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeProvider';
+import NavBar from './components/NavBar';
+import Work from './components/WorkExperience/WorkPage';
+import About from './components/About';
+import HomeHero from './components/HomeHero';
+import ProjectsPage from './components/Projects/ProjectsPage';
 
 function Home() {
-  return <HomeHero />
+  return <HomeHero />;
 }
 
 function App() {
   return (
-    <Theme appearance="inherit">
+    <ThemeProvider>
       <Router basename="/portfolio">
         <NavBar />
         <Routes>
@@ -24,8 +24,8 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Router>
-    </Theme>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
