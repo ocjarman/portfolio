@@ -9,3 +9,13 @@ export type ProjectsType = {
   imageUrl?: string;
   backgroundColor?: string;
 };
+
+export type WorkExperienceType = {
+  company: string;
+  location: string;
+  role: string;
+  period: string;
+  responsibilities: (string | React.ReactElement)[];
+  image?: string;
+  companyUrl?: string;
+};
