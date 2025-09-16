@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom';
-import { Github, Linkedin } from 'lucide-react';
-import { Flex } from '@radix-ui/themes';
+import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
+import { Button, Flex } from '@radix-ui/themes';
 import '../styles/NavBar.css';
+import { useEffect, useState } from 'react';
+import { Theme, applyTheme, getInitialTheme } from '../lib/utils';
 
 const NavBar = () => {
+  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
+
+  useEffect(() => {
+    applyTheme(theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      // ignore storage errors
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <nav className="navbar">
       <Flex className="nav-links" justify="between" align="center">
@@ -26,12 +43,17 @@ const NavBar = () => {
             </Link>
           </Flex>
           <Flex gap="4" align="center" ml="8">
-            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
-              <Github size={20} />
+
+            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
+              <CodeIcon size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
-              <Linkedin size={20} />
+            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
+              <BriefcaseBusinessIcon size={20} />
             </a>
+            <Button variant="ghost" aria-label="Toggle theme" className="theme-toggle" onClick={toggleTheme}>
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              
+            </Button>
           </Flex>
         </Flex>
       </Flex>

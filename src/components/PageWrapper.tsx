@@ -8,30 +8,11 @@ interface PageWrapperProps {
 
 const PageWrapper = ({ children, title }: PageWrapperProps) => {
   return (
-    <div style={{ 
-      minHeight: '100vh',
-      backgroundColor: '#ffffff',
-      paddingTop: '5rem'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '2rem',
-      }}>
-        <Box style={{ 
-          backgroundColor: 'white',
-          padding: '2.5rem'
-        }}>
+    <div className="min-h-screen bg-[var(--color-background)] pt-20 text-[var(--gray-12)]">
+      <div className="max-w-[1200px] mx-auto p-8">
+        <Box className="bg-[var(--color-panel)] p-10">
           {title && (
-            <h1 style={{
-              fontSize: '2rem',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '2rem',
-              color: '#000000',
-              letterSpacing: '-0.02em',
-              lineHeight: '1.1'
-            }}>
+            <h1 className="text-2xl font-semibold text-center mb-8 text-[var(--gray-12)]">
               {title}
             </h1>
           )}
@@ -42,4 +23,4 @@ const PageWrapper = ({ children, title }: PageWrapperProps) => {
   );
 };
 
-export default PageWrapper; 
+export default PageWrapper;

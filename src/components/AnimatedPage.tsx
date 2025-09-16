@@ -11,7 +11,7 @@ const AnimatedPage = ({ children }: AnimatedPageProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      style={{ width: '100%' }}
+      className='w-full'
     >
       {children}
     </motion.div>
