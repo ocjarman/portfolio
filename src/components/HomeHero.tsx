@@ -7,35 +7,24 @@ const HomeHero = () => {
       direction="column" 
       align="center" 
       justify="center" 
-      style={{ 
-        height: '100vh',
-        width: '100vw',
-        padding: '2rem',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        overflow: 'hidden'
-      }}
+      height="100vh"
+      width="100vw"
+      p="2rem"
+      position="fixed"
+      top="0"
+      left="0"
+      overflow="hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        style={{ maxWidth: '800px', width: '100%' }}
+        className='max-w-800px w-full'
       >
         <Text 
           size="9" 
-          style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-            fontWeight: '700',
-            letterSpacing: '-0.04em',
-            marginBottom: '1rem',
-            color: '#000000',
-            textAlign: 'center',
-            lineHeight: '1.1',
-            display: 'block',
-            wordBreak: 'break-word'
-          }}
+          className='font-sans font-bold text-center text-black mb-4 tracking-tighter'
+          
         >
           Olivia Jarman
         </Text>
