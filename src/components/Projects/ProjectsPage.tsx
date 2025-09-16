@@ -17,13 +17,15 @@ const ProjectsPage = () => {
       <AnimatedPage>
         <Flex gap="2" direction="column">
           {selectedProject && <ProjectDetails project={selectedProject} />}
-          {projects.map((project, index) => (
-            <Flex key={index}>
-              <Button onClick={() => setSelectedProject(project)}>
-                {project.title}
-              </Button>
-            </Flex>
-          ))}
+          <Flex gap="4" justify="center">
+            {projects.map((project, index) => (
+              <Flex key={index}>
+                <Button onClick={() => setSelectedProject(project)}>
+                  {project.title}
+                </Button>
+              </Flex>
+            ))}
+          </Flex>
         </Flex>
       </AnimatedPage>
     </PageWrapper>
