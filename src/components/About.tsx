@@ -10,19 +10,9 @@ const About = () => {
           direction="column" 
           gap="8" 
           align="center" 
-          style={{ 
-            maxWidth: '800px',
-            lineHeight: '1.6'
-          }}
+          maxWidth="800px"
         >
-          <Box style={{ 
-            width: '200px', 
-            height: '200px', 
-            borderRadius: '50%', 
-            overflow: 'hidden',
-            marginBottom: '1rem',
-            boxShadow: '0 3px 6px rgba(0,0,0,0.1)'
-          }}>
+          <Box width="200px" height="200px" mb="1rem" className="rounded-full overflow-hidden box-shadow-sm shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img 
               src="/portfolio/profile-image.jpg" 
               alt="Olivia" 
