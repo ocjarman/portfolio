@@ -27,7 +27,6 @@ const NavBar = () => {
         </Link>
         <Flex align="center">
           <Flex gap="6" align="center">
-          
             <Link to="/" className="nav-link">
               Home
             </Link>
