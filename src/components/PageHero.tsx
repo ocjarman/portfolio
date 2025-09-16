@@ -11,7 +11,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => {
       position: 'relative',
       width: '100vw',
       height: '250px',
-      backgroundColor: '#E8E6F3', // Lilac color
+      backgroundColor: 'var(--accent-3)',
       marginBottom: '2rem',
       marginLeft: 'calc(-50vw + 50%)',
       marginRight: 'calc(-50vw + 50%)',

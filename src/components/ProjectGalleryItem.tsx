@@ -47,7 +47,7 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'rgba(255, 255, 255, 0.95)',
+          background: 'color-mix(in oklab, var(--color-panel) 95%, transparent)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -56,7 +56,7 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
         <Text
           size="5"
           style={{
-            color: '#000000',
+            color: 'var(--gray-12)',
             textAlign: 'center',
             padding: '1rem',
             fontWeight: '500',

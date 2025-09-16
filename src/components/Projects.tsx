@@ -17,31 +17,31 @@ export interface ProjectProps {
 
 export const ProjectDetails = ({ project }: { project: ProjectProps }) => {
   return (
-    <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff' }}>
+    <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: 'var(--color-panel)' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
           <h2 style={{ 
             fontSize: '1.25rem',
             fontWeight: '600',
-            color: '#000000',
+            color: 'var(--gray-12)',
             letterSpacing: '-0.02em',
             lineHeight: '1.1',
             margin: 0
           }}>{project.title}</h2>
-          <Text size="1" style={{ color: '#333333' }}>{project.period}</Text>
+          <Text size="1" style={{ color: 'var(--gray-11)' }}>{project.period}</Text>
         </Flex>
         <Box style={{ marginTop: '0.75rem' }}>
-          <Text size="2" style={{ lineHeight: '1.6', color: '#000000' }}>
+          <Text size="2" style={{ lineHeight: '1.6', color: 'var(--gray-12)' }}>
             {project.description.join(' ')}
           </Text>
         </Box>
         <Flex gap="3" style={{ marginTop: '0.75rem' }}>
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: '#000000', textDecoration: 'none' }}>
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--gray-12)', textDecoration: 'none' }}>
             <Github size={16} />
             <Text size="1">GitHub</Text>
           </a>
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: '#000000', textDecoration: 'none' }}>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--gray-12)', textDecoration: 'none' }}>
               <ExternalLink size={16} />
               <Text size="1">Live Demo</Text>
             </a>

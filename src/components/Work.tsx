@@ -17,29 +17,29 @@ interface WorkExperienceProps {
 
 const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps }) => {
   return (
-    <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+    <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: 'var(--color-panel)', borderRadius: '8px', border: '1px solid var(--gray-a6)' }}>
       <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
         <Flex justify="between" align="center">
           <h2 style={{ 
             fontSize: '1.25rem',
             fontWeight: '600',
-            color: '#000000',
+            color: 'var(--gray-12)',
             letterSpacing: '-0.02em',
             lineHeight: '1.1',
             margin: 0
           }}>{experience.company}</h2>
-          <Text size="1" style={{ color: '#333333' }}>{experience.period}</Text>
+          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.period}</Text>
         </Flex>
         <Flex direction="column" gap="1">
-          <Text size="1" style={{ color: '#333333' }}>{experience.location}</Text>
-          <Text size="2" style={{ fontWeight: 500, color: '#000000' }}>{experience.role}</Text>
+          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.location}</Text>
+          <Text size="2" style={{ fontWeight: 500, color: 'var(--gray-12)' }}>{experience.role}</Text>
         </Flex>
         <Box style={{ marginTop: '0.75rem' }}>
           {experience.responsibilities.map((responsibility, index) => (
             <Text key={index} size="2" style={{ 
               marginBottom: '0.75rem', 
               lineHeight: '1.6', 
-              color: '#000000',
+              color: 'var(--gray-12)',
               display: 'block'
             }}>
               {responsibility}
@@ -53,7 +53,7 @@ const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ 
-                color: '#000000',
+                color: 'var(--gray-12)',
                 textDecoration: 'none',
                 fontWeight: 500
               }}

@@ -24,8 +24,7 @@ const HomeHero = () => {
       >
         <Text 
           size="9" 
-          className='font-sans font-bold text-center text-black mb-4 tracking-tighter'
-          
+          className='font-sans font-bold text-center mb-4 tracking-tighter'
         >
           <span className="brand-name">Olivia Jarman</span>
         </Text>
@@ -35,7 +34,7 @@ const HomeHero = () => {
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
             fontWeight: '500',
             letterSpacing: '-0.02em',
-            color: '#333333',
+            color: 'var(--gray-11)',
             textAlign: 'center',
             marginBottom: '2rem',
             display: 'block',
@@ -50,7 +49,7 @@ const HomeHero = () => {
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
             fontWeight: '400',
             letterSpacing: '-0.01em',
-            color: '#666666',
+            color: 'var(--gray-10)',
             textAlign: 'center',
             maxWidth: '600px',
             margin: '0 auto',
