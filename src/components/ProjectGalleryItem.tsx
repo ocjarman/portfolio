@@ -12,57 +12,27 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
   return (
     <Box
       onClick={onClick}
-      style={{
-        position: 'relative',
-        width: '250px',
-        height: '250px',
-        cursor: 'pointer',
-        overflow: 'hidden',
-        transition: 'all 0.3s ease',
-        transform: isSelected ? 'scale(0.95)' : 'scale(1)',
-      }}
+      className={`relative w-[250px] h-[250px] cursor-pointer overflow-hidden transition-all duration-300 ${isSelected ? 'scale-95' : 'scale-100'}`}
     >
       {/* Project image or background color */}
       <Box
+        className="absolute inset-0 grayscale"
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
           backgroundColor: backgroundColor || (imageUrl ? 'transparent' : 'var(--gray-4)'),
           backgroundImage: imageUrl ? `url(${imageUrl})` : 'none',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'grayscale(100%)',
+          backgroundPosition: 'center'
         }}
       />
       
       {/* Hover overlay */}
       <Box
-        className="project-overlay"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'color-mix(in oklab, var(--color-panel) 95%, transparent)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
+        className="project-overlay absolute inset-0 flex items-center justify-center"
+        style={{ background: 'color-mix(in oklab, var(--color-panel) 95%, transparent)' }}
       >
         <Text
           size="5"
-          style={{
-            color: 'var(--gray-12)',
-            textAlign: 'center',
-            padding: '1rem',
-            fontWeight: '500',
-            fontSize: '1.5rem',
-            fontFamily: "'Enriqueta', serif"
-          }}
+          className="text-[var(--gray-12)] text-center p-4 font-medium text-[1.5rem] font-['Enriqueta',serif]"
         >
           {title === 'Codenames Online Board Game' ? 'Codenames' : 
            title === 'Right Round Records' ? 'Right Round Records' : 

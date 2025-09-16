@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
-import { Github, ExternalLink } from 'lucide-react';
+import { CodeIcon, ExternalLink } from 'lucide-react';
 import ProjectGalleryItem from './ProjectGalleryItem';
 import { useState } from 'react';
 import '../styles/ProjectGallery.css';
@@ -17,31 +17,24 @@ export interface ProjectProps {
 
 export const ProjectDetails = ({ project }: { project: ProjectProps }) => {
   return (
-    <Box className="project-card" style={{ width: '100%', maxWidth: '900px', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: 'var(--color-panel)' }}>
-      <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
+    <Box className="project-card w-full max-w-[900px] p-6 mb-6 bg-[var(--color-panel)]">
+      <Flex direction="column" gap="2" className="text-left">
         <Flex justify="between" align="center">
-          <h2 style={{ 
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            color: 'var(--gray-12)',
-            letterSpacing: '-0.02em',
-            lineHeight: '1.1',
-            margin: 0
-          }}>{project.title}</h2>
-          <Text size="1" style={{ color: 'var(--gray-11)' }}>{project.period}</Text>
+          <h2 className="text-[1.25rem] font-semibold text-[var(--gray-12)] tracking-tight leading-[1.1] m-0">{project.title}</h2>
+          <Text size="1" className="text-[var(--gray-11)]">{project.period}</Text>
         </Flex>
-        <Box style={{ marginTop: '0.75rem' }}>
-          <Text size="2" style={{ lineHeight: '1.6', color: 'var(--gray-12)' }}>
+        <Box className="mt-3">
+          <Text size="2" className="leading-[1.6] text-[var(--gray-12)]">
             {project.description.join(' ')}
           </Text>
         </Box>
-        <Flex gap="3" style={{ marginTop: '0.75rem' }}>
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--gray-12)', textDecoration: 'none' }}>
-            <Github size={16} />
+        <Flex gap="3" className="mt-3">
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[var(--gray-12)] no-underline">
+            <CodeIcon size={16} />
             <Text size="1">GitHub</Text>
           </a>
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--gray-12)', textDecoration: 'none' }}>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[var(--gray-12)] no-underline">
               <ExternalLink size={16} />
               <Text size="1">Live Demo</Text>
             </a>
@@ -63,7 +56,6 @@ export const projects: ProjectProps[] = [
     ],
     technologies: ['Python', 'Oura Ring API', 'TextBelt API', 'Environment Variables', 'Scheduling System'],
     githubUrl: 'https://github.com/ocjarman/assistant.git',
-    backgroundColor: '#ffffff',
     imageUrl: '/portfolio/assistant.jpg'
   },
   {
@@ -103,19 +95,18 @@ const Projects = () => {
         {selectedProject && <ProjectDetails project={selectedProject} />}
       </Box>
       
-      <div className="project-gallery-grid">
+      <Flex className="project-gallery-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-gallery-item">
+          <Flex key={index} className="project-gallery-item">
             <ProjectGalleryItem
               title={project.title}
               imageUrl={project.imageUrl || ''}
-              backgroundColor={project.backgroundColor}
               isSelected={selectedProject?.title === project.title}
               onClick={() => setSelectedProject(selectedProject?.title === project.title ? null : project)}
             />
-          </div>
+          </Flex>
         ))}
-      </div>
+      </Flex>
     </Flex>
   );
 };

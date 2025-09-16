@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
-import { Button, Flex, Switch } from '@radix-ui/themes';
+import { Button, Flex } from '@radix-ui/themes';
 import '../styles/NavBar.css';
 import { useEffect, useState } from 'react';
 import { Theme, applyTheme, getInitialTheme } from '../lib/utils';
@@ -12,7 +12,9 @@ const NavBar = () => {
     applyTheme(theme);
     try {
       localStorage.setItem('theme', theme);
-    } catch {}
+    } catch {
+      // ignore storage errors
+    }
   }, [theme]);
 
   const toggleTheme = () => {
@@ -41,11 +43,11 @@ const NavBar = () => {
             </Link>
           </Flex>
           <Flex gap="4" align="center" ml="8">
-           
-            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
+
+            <a href="https://github.com/ocjarman" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
               <CodeIcon size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
+            <a href="https://www.linkedin.com/in/oliviajarman/" target="_blank" rel="noopener noreferrer" className="nav-link flex items-center">
               <BriefcaseBusinessIcon size={20} />
             </a>
             <Button variant="ghost" aria-label="Toggle theme" className="theme-toggle" onClick={toggleTheme}>

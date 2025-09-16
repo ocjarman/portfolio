@@ -30,33 +30,13 @@ const HomeHero = () => {
         </Text>
         <Text
           size="5"
-          style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-            fontWeight: '500',
-            letterSpacing: '-0.02em',
-            color: 'var(--gray-11)',
-            textAlign: 'center',
-            marginBottom: '2rem',
-            display: 'block',
-            wordBreak: 'break-word'
-          }}
+          className="font-sans font-medium tracking-tight text-[var(--gray-11)] text-center mb-8 block break-words"
         >
           Frontend Software Engineer
         </Text>
         <Text
           size="4"
-          style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-            fontWeight: '400',
-            letterSpacing: '-0.01em',
-            color: 'var(--gray-10)',
-            textAlign: 'center',
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6',
-            display: 'block',
-            wordBreak: 'break-word'
-          }}
+          className="font-sans font-normal tracking-tight text-[var(--gray-10)] text-center max-w-[600px] mx-auto leading-relaxed block break-words"
         >
           Crafting beautiful and intuitive user experiences through clean code and thoughtful design.
         </Text>

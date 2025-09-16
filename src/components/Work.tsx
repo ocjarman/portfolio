@@ -17,46 +17,30 @@ interface WorkExperienceProps {
 
 const WorkExperienceDetails = ({ experience }: { experience: WorkExperienceProps }) => {
   return (
-    <Box className="work-experience-card" style={{ width: '100%', padding: '1.5rem', marginBottom: '1.5rem', backgroundColor: 'var(--color-panel)', borderRadius: '8px', border: '1px solid var(--gray-a6)' }}>
-      <Flex direction="column" gap="2" style={{ textAlign: 'left' }}>
+    <Box className="work-experience-card w-full p-6 mb-6 bg-[var(--color-panel)] rounded-lg border border-[var(--gray-a6)]">
+      <Flex direction="column" gap="2" className="text-left">
         <Flex justify="between" align="center">
-          <h2 style={{ 
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            color: 'var(--gray-12)',
-            letterSpacing: '-0.02em',
-            lineHeight: '1.1',
-            margin: 0
-          }}>{experience.company}</h2>
-          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.period}</Text>
+          <h2 className="text-[1.25rem] font-semibold text-[var(--gray-12)] tracking-tight leading-[1.1] m-0">{experience.company}</h2>
+          <Text size="1" className="text-[var(--gray-11)]">{experience.period}</Text>
         </Flex>
         <Flex direction="column" gap="1">
-          <Text size="1" style={{ color: 'var(--gray-11)' }}>{experience.location}</Text>
-          <Text size="2" style={{ fontWeight: 500, color: 'var(--gray-12)' }}>{experience.role}</Text>
+          <Text size="1" className="text-[var(--gray-11)]">{experience.location}</Text>
+          <Text size="2" className="font-medium text-[var(--gray-12)]">{experience.role}</Text>
         </Flex>
-        <Box style={{ marginTop: '0.75rem' }}>
+        <Box className="mt-3">
           {experience.responsibilities.map((responsibility, index) => (
-            <Text key={index} size="2" style={{ 
-              marginBottom: '0.75rem', 
-              lineHeight: '1.6', 
-              color: 'var(--gray-12)',
-              display: 'block'
-            }}>
+            <Text key={index} size="2" className="mb-3 leading-[1.6] text-[var(--gray-12)] block">
               {responsibility}
             </Text>
           ))}
         </Box>
         {experience.companyUrl && (
-          <Text size="2" style={{ marginTop: '0.5rem' }}>
+          <Text size="2" className="mt-2">
             <a 
               href={experience.companyUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              style={{ 
-                color: 'var(--gray-12)',
-                textDecoration: 'none',
-                fontWeight: 500
-              }}
+              className="text-[var(--gray-12)] no-underline font-medium"
             >
               {experience.companyUrl}
             </a>
@@ -78,11 +62,8 @@ const WorkExperienceItem = ({
 }) => {
   return (
     <Box 
-      className="work-experience-item" 
+      className={`work-experience-item ${isSelected ? 'scale-95' : 'scale-100'}`}
       onClick={onClick}
-      style={{
-        transform: isSelected ? 'scale(0.95)' : 'scale(1)'
-      }}
     >
       {experience.image ? (
         <img 
@@ -91,15 +72,8 @@ const WorkExperienceItem = ({
           className="work-experience-image"
         />
       ) : (
-        <Box style={{ 
-          width: '100%', 
-          height: '100%', 
-          backgroundColor: 'var(--gray-4)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <Text size="2" style={{ color: 'var(--gray-9)' }}>Photo Placeholder</Text>
+        <Box className="w-full h-full bg-[var(--gray-4)] flex items-center justify-center">
+          <Text size="2" className="text-[var(--gray-9)]">Photo Placeholder</Text>
         </Box>
       )}
       <Box className="work-experience-overlay" />

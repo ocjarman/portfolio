@@ -5,6 +5,7 @@ import '../styles/ProjectGallery.css';
 import PageWrapper from './PageWrapper';
 import ProjectGalleryItem from './ProjectGalleryItem';
 import AnimatedPage from './AnimatedPage';
+import { Flex } from '@radix-ui/themes';
 
 const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
@@ -16,9 +17,9 @@ const ProjectsPage = () => {
           {selectedProject && <ProjectDetails project={selectedProject} />}
         </Box>
         
-        <div className="project-gallery-grid">
+        <Flex className="project-gallery-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-gallery-item">
+            <Flex key={index} className="project-gallery-item">
               <ProjectGalleryItem
                 title={project.title}
                 imageUrl={project.imageUrl || ''}
@@ -26,9 +27,9 @@ const ProjectsPage = () => {
                 isSelected={selectedProject?.title === project.title}
                 onClick={() => setSelectedProject(selectedProject?.title === project.title ? null : project)}
               />
-            </div>
+            </Flex>
           ))}
-        </div>
+        </Flex>
       </AnimatedPage>
     </PageWrapper>
   );
