@@ -1,5 +1,6 @@
 import { Flex, Text } from '@radix-ui/themes';
 import { motion } from 'framer-motion';
+import '../styles/HomeHero.css';
 
 const HomeHero = () => {
   return (
@@ -26,7 +27,7 @@ const HomeHero = () => {
           className='font-sans font-bold text-center text-black mb-4 tracking-tighter'
           
         >
-          Olivia Jarman
+          <span className="brand-name">Olivia Jarman</span>
         </Text>
         <Text
           size="5"
