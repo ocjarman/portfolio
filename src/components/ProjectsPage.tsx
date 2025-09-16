@@ -8,24 +8,33 @@ import AnimatedPage from './AnimatedPage';
 import { Flex } from '@radix-ui/themes';
 
 const ProjectsPage = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
+    null
+  );
 
   return (
     <PageWrapper title="Projects">
       <AnimatedPage>
-        <Box className={`project-details ${selectedProject ? 'active' : ''}`} style={{ width: '100%' }}>
+        <Box
+          className={`project-details ${selectedProject ? 'active' : ''}`}
+          style={{ width: '100%' }}
+        >
           {selectedProject && <ProjectDetails project={selectedProject} />}
         </Box>
-        
+
         <Flex className="project-gallery-grid">
           {projects.map((project, index) => (
-            <Flex key={index} className="project-gallery-item">
+            <Flex key={index}>
               <ProjectGalleryItem
                 title={project.title}
                 imageUrl={project.imageUrl || ''}
                 backgroundColor={project.backgroundColor}
                 isSelected={selectedProject?.title === project.title}
-                onClick={() => setSelectedProject(selectedProject?.title === project.title ? null : project)}
+                onClick={() =>
+                  setSelectedProject(
+                    selectedProject?.title === project.title ? null : project
+                  )
+                }
               />
             </Flex>
           ))}
@@ -35,4 +44,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage; 
+export default ProjectsPage;

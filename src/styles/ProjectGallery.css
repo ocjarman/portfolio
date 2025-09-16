@@ -1,26 +1,3 @@
-.project-overlay {
-  opacity: 0;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
-}
-.project-gallery-item {
-  color: var(--gray-12);
-  visibility: visible;
-  opacity: 1;
-}
-
-.project-gallery-item .project-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Add hover effect for the image */
-.project-gallery-item:hover img,
-.project-gallery-item:hover [style*='background-image'] {
-  transform: scale(1.05);
-}
-
 .project-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 250px);
@@ -33,7 +10,6 @@
 
 .project-details {
   max-height: 0;
-  /* overflow: hidden; */
   transition: max-height 0.3s ease-out;
 }
 

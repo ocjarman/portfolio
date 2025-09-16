@@ -9,7 +9,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => {
   return (
     <Box className="relative w-screen h-[250px] bg-[var(--accent-3)] mb-8 -mx-[calc(50vw-50%)] flex items-center justify-center">
       <Flex direction="column" align="center" gap="2">
-        <h1 className="text-[2.75rem] font-semibold text-[var(--gray-12)] m-0 text-center tracking-tight leading-[1.1]">
+        <h1 className="text-[2.75rem] font-semibold text-[var(--gray-12)] m-0 text-center ">
           {title}
         </h1>
         {subtitle && (
@@ -22,4 +22,4 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => {
   );
 };
 
-export default PageHero; 
+export default PageHero;

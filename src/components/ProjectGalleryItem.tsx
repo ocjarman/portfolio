@@ -8,7 +8,13 @@ interface ProjectGalleryItemProps {
   backgroundColor?: string;
 }
 
-const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundColor }: ProjectGalleryItemProps) => {
+const ProjectGalleryItem = ({
+  title,
+  imageUrl,
+  isSelected,
+  onClick,
+  backgroundColor,
+}: ProjectGalleryItemProps) => {
   return (
     <Box
       onClick={onClick}
@@ -18,29 +24,34 @@ const ProjectGalleryItem = ({ title, imageUrl, isSelected, onClick, backgroundCo
       <Box
         className="absolute inset-0 grayscale"
         style={{
-          backgroundColor: backgroundColor || (imageUrl ? 'transparent' : 'var(--gray-4)'),
+          backgroundColor:
+            backgroundColor || (imageUrl ? 'transparent' : 'var(--gray-4)'),
           backgroundImage: imageUrl ? `url(${imageUrl})` : 'none',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
         }}
       />
-      
+
       {/* Hover overlay */}
       <Box
-        className="project-overlay absolute inset-0 flex items-center justify-center"
-        style={{ background: 'color-mix(in oklab, var(--color-panel) 95%, transparent)' }}
+        className="absolute inset-0 flex items-center justify-center"
+        style={{
+          background: 'var(--color-panel) 95%, transparent)',
+        }}
       >
         <Text
           size="5"
           className="text-[var(--gray-12)] text-center p-4 font-medium text-[1.5rem] font-['Enriqueta',serif]"
         >
-          {title === 'Codenames Online Board Game' ? 'Codenames' : 
-           title === 'Right Round Records' ? 'Right Round Records' : 
-           title}
+          {title === 'Codenames Online Board Game'
+            ? 'Codenames'
+            : title === 'Right Round Records'
+              ? 'Right Round Records'
+              : title}
         </Text>
       </Box>
     </Box>
   );
 };
 
-export default ProjectGalleryItem; 
+export default ProjectGalleryItem;
