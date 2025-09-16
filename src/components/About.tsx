@@ -8,7 +8,7 @@ const About = () => {
       <AnimatedPage>
         <Flex 
           direction="column" 
-          gap="8" 
+          gap="1" 
           align="center" 
           maxWidth="800px"
         >

@@ -8,7 +8,7 @@ interface PageWrapperProps {
 
 const PageWrapper = ({ children, title }: PageWrapperProps) => {
   return (
-    <div className="min-h-screen bg-[var(--color-background)] pt-20">
+    <div className="min-h-screen bg-[var(--color-background)] pt-20 text-[var(--gray-12)]">
       <div className="max-w-[1200px] mx-auto p-8">
         <Box className="bg-[var(--color-panel)] p-10">
           {title && (

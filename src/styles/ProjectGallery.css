@@ -1,10 +1,14 @@
 .project-overlay {
   opacity: 0;
-  visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+.project-gallery-item {
+  color: var(--gray-12);
+  visibility: visible;
+  opacity: 1;
+}
 
-.project-gallery-item:hover .project-overlay {
+.project-gallery-item .project-overlay {
   opacity: 1;
   visibility: visible;
 }
@@ -27,7 +31,7 @@
 
 .project-details {
   max-height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: max-height 0.3s ease-out;
 }
 
