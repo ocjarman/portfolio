@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
-import { Button, Flex } from '@radix-ui/themes';
+import { Flex, Link as RadixLink } from '@radix-ui/themes';
 import '../styles/NavBar.css';
 import { useTheme } from './ThemeProvider';
 
@@ -8,55 +8,47 @@ const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="navbar">
-      <Flex className="nav-links" justify="between" align="center">
-        <Link to="/" className="brand-name">
-          Olivia Jarman
-        </Link>
-        <Flex align="center">
-          <Flex gap="6" align="center">
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-            <Link to="/work" className="nav-link">
-              Work
-            </Link>
-            <Link to="/projects" className="nav-link">
-              Projects
-            </Link>
-          </Flex>
-          <Flex gap="4" align="center" ml="8">
-            <a
-              href="https://github.com/ocjarman"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link flex items-center"
-            >
-              <CodeIcon size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/oliviajarman/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link flex items-center"
-            >
-              <BriefcaseBusinessIcon size={20} />
-            </a>
-            <Button
-              variant="ghost"
-              aria-label="Toggle theme"
-              className="button-theme-toggle"
-              onClick={toggleTheme}
-            >
-              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-            </Button>
-          </Flex>
+    <Flex
+      align="center"
+      wrap="wrap"
+      justify="between"
+      height="var(--navbar-height)"
+      className="px-4"
+    >
+      <Link to="/" className="brand-name inline-flex items-center leading-none">
+        Olivia Jarman
+      </Link>
+
+      <Flex align="center" wrap="wrap">
+        <Flex align="center" gap="3" wrap="wrap" mr="4">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/work">Work</Link>
+          <Link to="/projects">Projects</Link>
+        </Flex>
+        <Flex align="center" justify="center" gap="2">
+          <RadixLink
+            href="https://github.com/ocjarman"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CodeIcon size={20} className="block" color="black" />
+          </RadixLink>
+          <RadixLink
+            href="https://www.linkedin.com/in/oliviajarman/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BriefcaseBusinessIcon size={20} className="block" color="black" />
+          </RadixLink>
+          {theme === 'dark' ? (
+            <Sun size={18} onClick={toggleTheme} className="cursor-pointer" />
+          ) : (
+            <Moon size={18} onClick={toggleTheme} className="cursor-pointer" />
+          )}
         </Flex>
       </Flex>
-    </nav>
+    </Flex>
   );
 };
 
