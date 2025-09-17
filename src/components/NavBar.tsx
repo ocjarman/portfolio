@@ -47,7 +47,6 @@ const NavBar = () => {
             </a>
             <Button
               variant="ghost"
-              size="icon"
               aria-label="Toggle theme"
               className="button-theme-toggle"
               onClick={toggleTheme}

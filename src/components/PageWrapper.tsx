@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Box } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 
 interface PageWrapperProps {
   children: ReactNode;
@@ -8,18 +8,10 @@ interface PageWrapperProps {
 
 const PageWrapper = ({ children, title }: PageWrapperProps) => {
   return (
-    <div className="min-h-screen bg-[var(--color-background)] pt-20 text-[var(--gray-12)]">
-      <div className="max-w-[1200px] mx-auto p-8">
-        <Box className="bg-[var(--color-panel)] p-10">
-          {title && (
-            <h1 className="text-2xl font-semibold text-center mb-8 text-[var(--gray-12)]">
-              {title}
-            </h1>
-          )}
-          {children}
-        </Box>
-      </div>
-    </div>
+    <Flex direction="column">
+      {title && <h1 className="">{title}</h1>}
+      {children}
+    </Flex>
   );
 };
 
