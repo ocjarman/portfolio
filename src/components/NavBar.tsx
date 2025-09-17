@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
 import { Flex, Link as RadixLink } from '@radix-ui/themes';
-import '../styles/NavBar.css';
 import { useTheme } from './ThemeProvider';
 
 const NavBar = () => {
@@ -14,10 +13,16 @@ const NavBar = () => {
       justify="between"
       height="var(--navbar-height)"
       className="px-4"
+      width="90vw"
     >
-      <Link to="/" className="brand-name inline-flex items-center leading-none">
-        Olivia Jarman
-      </Link>
+      <Flex>
+        <Link
+          to="/"
+          className="brand-name inline-flex items-center cursor-pointer"
+        >
+          Olivia Jarman
+        </Link>
+      </Flex>
 
       <Flex align="center" wrap="wrap">
         <Flex align="center" gap="3" wrap="wrap" mr="4">

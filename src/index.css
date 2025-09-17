@@ -18,9 +18,9 @@
   font-weight: 400;
   letter-spacing: -0.01em;
 
-  --navbar-height: 48px
-    /* Let Radix Theme provide tokens; we only reference them below */
-    color: var(--gray-12);
+  --navbar-height: 48px;
+  /* Let Radix Theme provide tokens; we only reference them below */
+  color: var(--gray-12);
   background-color: var(--color-background);
 
   font-synthesis: none;

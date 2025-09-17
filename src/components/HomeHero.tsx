@@ -8,12 +8,10 @@ const HomeHero = () => {
       direction="column"
       align="center"
       justify="center"
-      height="100vh"
+      height="calc(100vh - var(--navbar-height))"
       width="100vw"
       p="2rem"
-      position="fixed"
-      top="0"
-      left="0"
+      mt="var(--navbar-height)"
       overflow="hidden"
     >
       <motion.div

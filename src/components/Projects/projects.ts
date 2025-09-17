@@ -17,7 +17,7 @@ export const projects: ProjectsType[] = [
       'Scheduling System',
     ],
     githubUrl: 'https://github.com/ocjarman/assistant.git',
-    imageUrl: '/portfolio/assistant.jpg',
+    imageUrl: '/assistant.jpg',
   },
   {
     id: 'codenames',
@@ -42,7 +42,7 @@ export const projects: ProjectsType[] = [
     ],
     githubUrl: 'https://github.com/2208-Capstone-Team-2/codenames',
     liveUrl: 'https://codenames-0nt7.onrender.com/',
-    imageUrl: '/portfolio/codenames.jpg',
+    imageUrl: '/codenames.jpg',
   },
   {
     id: 'rrr',
@@ -68,6 +68,6 @@ export const projects: ProjectsType[] = [
     ],
     githubUrl: 'https://github.com/2208-GS-Team-3/grace-shopper-team-three',
     liveUrl: 'https://rightroundrecords.us',
-    imageUrl: '/portfolio/rightround.jpg',
+    imageUrl: '/rightround.jpg',
   },
 ];
