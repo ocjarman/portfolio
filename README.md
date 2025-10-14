@@ -18,4 +18,3 @@ Feel free to explore and reach out if you'd like to connect or collaborate!
 ## Connect With Me
 
 You can reach me through the contact form on my website or connect with me on social media.
-
