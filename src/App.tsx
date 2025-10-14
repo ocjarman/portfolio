@@ -16,7 +16,7 @@ function Home() {
 function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/portfolio">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

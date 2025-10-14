@@ -20,7 +20,7 @@ const About = () => {
             className="rounded-full overflow-hidden box-shadow-sm shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <img
-              src="/profile-image.jpg"
+              src="./profile-image.jpg"
               alt="Olivia image"
               className="w-full h-full object-cover object-top filter grayscale-100"
             />
