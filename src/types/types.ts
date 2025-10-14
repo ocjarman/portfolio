@@ -11,6 +11,7 @@ export type ProjectsType = {
 };
 
 export type WorkExperienceType = {
+  id: string;
   company: string;
   location: string;
   role: string;

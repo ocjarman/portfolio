@@ -1,18 +1,20 @@
 import { WorkExperienceType } from '../../types/types';
 export const workExperiences: WorkExperienceType[] = [
   {
+    id: '1',
     company: 'SITE Technologies',
     location: 'Remote (Chicago, IL)',
     role: 'Software Engineer',
     period: 'May 2023 - Present',
     responsibilities: [
       'As a Software Engineer at SITE Technologies, I contribute to frontend development efforts in a complete application rebuild using React, TypeScript, and modern frameworks. My focus is on creating intuitive user interfaces and implementing new features for our stakeholder-facing applications.',
-      'I drive code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git version control.',
+      'I drive code quality improvements through comprehensive documentation, code reviews, and clean code implementation while managing our codebase using git.',
     ],
     image: '/site-tech.jpg',
     companyUrl: 'https://www.sitetechnologies.com/',
   },
   {
+    id: '2',
     company: 'SEO Scholars',
     location: 'New York, NY',
     role: '11th Grade Program Manager & AmeriCorps VISTA Project Manager',
@@ -25,6 +27,7 @@ export const workExperiences: WorkExperienceType[] = [
     companyUrl: 'https://www.seoscholars.org/',
   },
   {
+    id: '3',
     company: 'Uncommon Schools',
     location: 'Brooklyn, NY',
     role: 'Special Projects Coordinator',
@@ -37,6 +40,7 @@ export const workExperiences: WorkExperienceType[] = [
     companyUrl: 'https://www.uncommonschools.org/',
   },
   {
+    id: '4',
     company: 'Teach For America',
     location: 'Atlanta, GA',
     role: '10th Grade Science Teacher',
