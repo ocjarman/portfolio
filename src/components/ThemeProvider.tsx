@@ -1,25 +1,11 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Theme } from '@radix-ui/themes';
 import {
   Theme as CustomTheme,
   getInitialTheme,
   applyTheme,
 } from '../lib/utils';
-
-interface ThemeContextType {
-  theme: CustomTheme;
-  toggleTheme: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+import { ThemeContext } from '../contexts/ThemeContext';
 
 interface ThemeProviderProps {
   children: React.ReactNode;

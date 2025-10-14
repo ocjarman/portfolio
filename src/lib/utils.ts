@@ -18,7 +18,9 @@ export function getInitialTheme(): Theme {
   try {
     const stored = localStorage.getItem('theme') as Theme | null;
     if (stored === 'light' || stored === 'dark') return stored;
-  } catch {}
+  } catch {
+    // Ignore localStorage errors - fall back to system theme
+  }
   return getSystemTheme();
 }
 

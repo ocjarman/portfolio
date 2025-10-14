@@ -1,7 +1,7 @@
 import { WorkExperienceType } from '../../types/types';
 import { Flex } from '@radix-ui/themes';
 import { useState } from 'react';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../../hooks/useTheme';
 
 const WorkItem = ({
   experience,

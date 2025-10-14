@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BriefcaseBusinessIcon, Moon, Sun, CodeIcon } from 'lucide-react';
 import { Flex, Link as RadixLink } from '@radix-ui/themes';
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '../hooks/useTheme';
 
 const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
