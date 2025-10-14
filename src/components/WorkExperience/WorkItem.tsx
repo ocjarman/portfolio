@@ -16,7 +16,7 @@ const WorkItem = ({
     <>
       {experience.image && (
         <Flex
-          className="relative inline-block group cursor-pointer"
+          className="relative inline-block group cursor-pointer hover:scale-150 transition-scale duration-300"
           onClick={onClick}
           onMouseEnter={() => setIsHovered(experience.id)}
           onMouseLeave={() => setIsHovered(null)}
@@ -28,13 +28,13 @@ const WorkItem = ({
             height="auto"
             width="200px"
           />
-          {isHovered === experience.id && (
-            <Flex className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="text-white text-2xl font-semibold tracking-wide">
-                {experience.period}
-              </span>
-            </Flex>
-          )}
+        </Flex>
+      )}
+      {isHovered === experience.id && (
+        <Flex className="absolute z-100 inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-white text-2xl font-semibold tracking-wide">
+            {experience.period}
+          </span>
         </Flex>
       )}
     </>

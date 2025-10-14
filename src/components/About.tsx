@@ -6,7 +6,13 @@ const About = () => {
   return (
     <PageWrapper title="About">
       <AnimatedPage>
-        <Flex direction="column" gap="1" align="center" maxWidth="800px">
+        <Flex
+          direction="column"
+          gap="1"
+          align="center"
+          maxWidth="800px"
+          mx="auto"
+        >
           <Box
             width="200px"
             height="200px"
