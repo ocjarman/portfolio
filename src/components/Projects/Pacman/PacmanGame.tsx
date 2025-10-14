@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { Box, Flex, Text } from '@radix-ui/themes';
 
-const MAZE_WIDTH = 19; // Width of the maze in cells
-const MAZE_HEIGHT = 22; // Height of the maze in cells
-const GAME_WIDTH = 380; // Desired game width in pixels
-const GAME_HEIGHT = 440; // Desired game height in pixels
+const MAZE_WIDTH = 19;
+const MAZE_HEIGHT = 22;
+const GAME_WIDTH = 380;
+const GAME_HEIGHT = 440;
 const CELL_SIZE_X = GAME_WIDTH / MAZE_WIDTH;
 const CELL_SIZE_Y = GAME_HEIGHT / MAZE_HEIGHT;
 
@@ -62,7 +62,6 @@ const PacmanGame = () => {
   const [gameWon, setGameWon] = useState(false);
   const [lives, setLives] = useState(3);
 
-  // Use ref to track current position for ghost movement
   const pacmanPosRef = useRef(pacmanPos);
   useEffect(() => {
     pacmanPosRef.current = pacmanPos;
@@ -92,13 +91,11 @@ const PacmanGame = () => {
         { x: ghost.position.x, y: ghost.position.y - 1 },
         { x: ghost.position.x, y: ghost.position.y + 1 },
       ].filter(pos => {
-        // Check if the move is valid (not a wall)
         if (pos.y < 0 || pos.y >= MAZE_LAYOUT.length) return false;
         if (pos.x < 0 || pos.x >= MAZE_LAYOUT[0].length) return false;
         return MAZE_LAYOUT[pos.y][pos.x] !== 0;
       });
 
-      // Simple ghost AI: move towards Pacman if possible
       possibleMoves.sort((a, b) => {
         const distA =
           Math.abs(a.x - pacmanPosRef.current.x) +
@@ -136,7 +133,6 @@ const PacmanGame = () => {
         if (newLives <= 0) {
           setGameOver(true);
         } else {
-          // Only reset positions if we still have lives left
           setPacmanPos({ x: 1, y: 1 });
           setGhosts(INITIAL_GHOSTS);
         }
@@ -160,7 +156,6 @@ const PacmanGame = () => {
   // Handle keyboard controls
   const handleKeyPress = useCallback(
     (e: KeyboardEvent) => {
-      // Prevent page scrolling on arrow keys
       if (e.key.startsWith('Arrow')) {
         e.preventDefault();
       }
@@ -213,7 +208,6 @@ const PacmanGame = () => {
     if (dotIndex !== -1) {
       setDots(prev => {
         const newDots = prev.filter((_, i) => i !== dotIndex);
-        // Check for win condition
         if (newDots.length === 0) {
           setGameWon(true);
         }

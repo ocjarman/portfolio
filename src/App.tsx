@@ -7,7 +7,6 @@ import Work from './components/WorkExperience/WorkPage';
 import About from './components/About';
 import HomeHero from './components/HomeHero';
 import ProjectsPage from './components/Projects/ProjectsPage';
-import PlayPage from './components/WorkExperience/Play/PlayPage';
 
 function Home() {
   return <HomeHero />;
@@ -23,7 +22,6 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/play" element={<PlayPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

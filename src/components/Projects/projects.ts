@@ -1,6 +1,25 @@
 import { ProjectsType } from './../../types/types';
 export const projects: ProjectsType[] = [
   {
+    id: 'pacman',
+    title: 'Pacman Game',
+    period: 'October 2025',
+    description: [
+      'Interactive Pacman game built with React and TypeScript.',
+      'Features classic gameplay mechanics including ghost AI, score tracking, and multiple lives.',
+      'Implemented using modern React patterns and responsive design principles.',
+    ],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Radix UI',
+      'CSS',
+      'Game Development',
+    ],
+    githubUrl: 'https://github.com/ocjarman/portfolio',
+    backgroundColor: '#000',
+  },
+  {
     id: 'assistant',
     title: 'Assistant',
     period: 'March 2024',
