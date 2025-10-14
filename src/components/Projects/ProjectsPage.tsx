@@ -21,7 +21,10 @@ const ProjectsPage = () => {
             {projects.map((project, index) => (
               <Flex key={index}>
                 <Button
-                  variant="soft"
+                  variant={
+                    selectedProject?.id === project.id ? 'solid' : 'soft'
+                  }
+                  disabled={selectedProject?.id === project.id}
                   onClick={() => setSelectedProject(project)}
                 >
                   {project.title}

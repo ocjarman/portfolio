@@ -60,7 +60,6 @@ export const projects: ProjectsType[] = [
       'Render',
     ],
     githubUrl: 'https://github.com/2208-Capstone-Team-2/codenames',
-    liveUrl: 'https://codenames-0nt7.onrender.com/',
     imageUrl: '/codenames.jpg',
   },
   {

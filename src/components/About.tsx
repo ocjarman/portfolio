@@ -22,7 +22,7 @@ const About = () => {
             <img
               src="/profile-image.jpg"
               alt="Olivia image"
-              className="w-full h-full object-cover filter grayscale-100"
+              className="w-full h-full object-cover object-top filter grayscale-100"
             />
           </Box>
 
