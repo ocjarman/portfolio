@@ -24,14 +24,14 @@ const NavBar = () => {
         </Link>
       </Flex>
 
+      <Flex align="center" gap="3" wrap="wrap" mr="4">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/work">Work</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/interests">Interests</Link>
+      </Flex>
       <Flex align="center" wrap="wrap">
-        <Flex align="center" gap="3" wrap="wrap" mr="4">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/work">Work</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/interests">Interests</Link>
-        </Flex>
         <Flex align="center" justify="center" gap="2">
           <RadixLink
             href="https://github.com/ocjarman"
