@@ -29,7 +29,7 @@ const NavBar = () => {
         <Link to="/about">About</Link>
         <Link to="/work">Work</Link>
         <Link to="/projects">Projects</Link>
-        <Link to="/interests">Interests</Link>
+        <Link to="/passions">Passions</Link>
       </Flex>
       <Flex align="center" wrap="wrap">
         <Flex align="center" justify="center" gap="2">
