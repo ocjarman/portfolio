@@ -8,7 +8,6 @@ import About from './components/About';
 import HomeHero from './components/HomeHero';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import InterestsPage from './components/Interests/InterestsPage';
-import ErrorBoundary from './ErrorBoundary';
 
 function Home() {
   return <HomeHero />;
@@ -16,20 +15,18 @@ function Home() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider>
-        <Router basename="/portfolio/">
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/interests" element={<InterestsPage />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider>
+      <Router basename="/portfolio/">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/interests" element={<InterestsPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
