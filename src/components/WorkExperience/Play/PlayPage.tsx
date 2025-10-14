@@ -12,7 +12,6 @@ const PlayPage = () => {
         justify="center"
         align="center"
         style={{
-          backgroundColor: 'black',
           minHeight: 'calc(100vh - var(--navbar-height) - 100px)',
         }}
       >

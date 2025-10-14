@@ -229,7 +229,13 @@ const PacmanGame = () => {
   }, [handleKeyPress]);
 
   return (
-    <Flex direction="column" align="center" gap="1">
+    <Flex
+      direction="column"
+      align="center"
+      gap="1"
+      p="8"
+      style={{ backgroundColor: 'black' }}
+    >
       <Flex gap="4">
         <Text color="violet" size="6">
           Score: {score}
@@ -239,7 +245,7 @@ const PacmanGame = () => {
         </Text>
       </Flex>
       <Flex
-        className="bg-black border border-[#00f]"
+        className="border border-[#00f]"
         position="relative"
         style={{
           width: GAME_WIDTH,
