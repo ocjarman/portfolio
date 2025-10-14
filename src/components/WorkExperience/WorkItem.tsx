@@ -1,6 +1,7 @@
 import { WorkExperienceType } from '../../types/types';
 import { Flex } from '@radix-ui/themes';
 import { useState } from 'react';
+import { useTheme } from '../ThemeProvider';
 
 const WorkItem = ({
   experience,
@@ -11,12 +12,14 @@ const WorkItem = ({
   onClick: () => void;
 }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
 
   return (
     <>
       {experience.image && (
         <Flex
-          className="relative inline-block group cursor-pointer hover:scale-150 transition-scale duration-300"
+          className="relative inline-flex justify-center group cursor-pointer hover:scale-150 transition-scale duration-300"
           onClick={onClick}
           onMouseEnter={() => setIsHovered(experience.id)}
           onMouseLeave={() => setIsHovered(null)}
@@ -24,7 +27,7 @@ const WorkItem = ({
           <img
             src={experience.image}
             alt={`${experience.company} workplace`}
-            className="grayscale block"
+            className={`block ${isDarkMode ? 'grayscale invert' : 'grayscale'}`}
             height="auto"
             width="200px"
           />

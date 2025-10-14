@@ -11,31 +11,39 @@ import { Flex } from '@radix-ui/themes';
 const WorkPage = () => {
   const [selectedExperience, setSelectedExperience] =
     useState<WorkExperienceType | null>(null);
-
   return (
     <PageWrapper title="Work Experience">
       <AnimatedPage>
-        <Box width="100%">
+        <Flex direction="column" align="center" width="100%" gap="6">
           {selectedExperience && (
-            <WorkExperienceDetails experience={selectedExperience} />
+            <Box width="50%">
+              <WorkExperienceDetails experience={selectedExperience} />
+            </Box>
           )}
-        </Box>
 
-        <Flex direction="column" gap="9" justify="center" align="center">
-          {workExperiences.map((experience, index) => (
-            <WorkItem
-              key={index}
-              experience={experience}
-              isSelected={selectedExperience?.company === experience.company}
-              onClick={() =>
-                setSelectedExperience(
-                  selectedExperience?.company === experience.company
-                    ? null
-                    : experience
-                )
-              }
-            />
-          ))}
+          <Flex
+            direction="column"
+            gap="9"
+            justify="center"
+            align="center"
+            width="100%"
+            style={{ padding: '2rem' }}
+          >
+            {workExperiences.map((experience, index) => (
+              <WorkItem
+                key={index}
+                experience={experience}
+                isSelected={selectedExperience?.company === experience.company}
+                onClick={() =>
+                  setSelectedExperience(
+                    selectedExperience?.company === experience.company
+                      ? null
+                      : experience
+                  )
+                }
+              />
+            ))}
+          </Flex>
         </Flex>
       </AnimatedPage>
     </PageWrapper>

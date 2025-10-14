@@ -5,7 +5,7 @@ import { useTheme } from './ThemeProvider';
 
 const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
-
+  const darkMode = theme === 'dark';
   return (
     <Flex
       align="center"
@@ -38,14 +38,22 @@ const NavBar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <CodeIcon size={20} className="block" color="black" />
+            <CodeIcon
+              size={20}
+              className="block"
+              color={darkMode ? 'white' : 'black'}
+            />
           </RadixLink>
           <RadixLink
             href="https://www.linkedin.com/in/oliviajarman/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <BriefcaseBusinessIcon size={20} className="block" color="black" />
+            <BriefcaseBusinessIcon
+              size={20}
+              className="block"
+              color={darkMode ? 'white' : 'black'}
+            />
           </RadixLink>
           {theme === 'dark' ? (
             <Sun size={18} onClick={toggleTheme} className="cursor-pointer" />
