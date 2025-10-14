@@ -8,12 +8,10 @@ const HomeHero = () => {
       direction="column"
       align="center"
       justify="center"
-      height="100vh"
+      height="calc(100vh - var(--navbar-height))"
       width="100vw"
       p="2rem"
-      position="fixed"
-      top="0"
-      left="0"
+      mt="var(--navbar-height)"
       overflow="hidden"
     >
       <motion.div
@@ -22,19 +20,19 @@ const HomeHero = () => {
         transition={{ duration: 0.8 }}
         className="max-w-800px w-full"
       >
-        <Text size="9" className="font-sans font-bold text-center mb-4">
-          <span className="brand-name">Olivia Jarman</span>
+        <Text size="6">
+          <span>Olivia Jarman</span>
         </Text>
         <Text
           size="5"
-          className="font-sans font-medium text-[var(--gray-11)] text-center mb-8 block break-words"
+          mt="2"
+          mb="2"
+          align="center"
+          className="text-[var(--gray-11)] block"
         >
           Frontend Software Engineer
         </Text>
-        <Text
-          size="4"
-          className="font-sans font-normal text-[var(--gray-10)] text-center max-w-[600px] mx-auto leading-relaxed block break-words"
-        >
+        <Text align="center" size="4" className="text-[var(--gray-10)]">
           Crafting beautiful and intuitive user experiences through clean code
           and thoughtful design.
         </Text>

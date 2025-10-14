@@ -2,11 +2,11 @@ import { Box } from '@radix-ui/themes';
 import PageWrapper from '../PageWrapper';
 import { useState } from 'react';
 import { workExperiences } from './workExperiences';
-import '../../styles/WorkExperience.css';
 import AnimatedPage from '../AnimatedPage';
 import { WorkExperienceType } from '../../types/types';
 import WorkExperienceDetails from './WorkExperienceDetails';
 import WorkItem from './WorkItem';
+import { Flex } from '@radix-ui/themes';
 
 const WorkPage = () => {
   const [selectedExperience, setSelectedExperience] =
@@ -15,16 +15,13 @@ const WorkPage = () => {
   return (
     <PageWrapper title="Work Experience">
       <AnimatedPage>
-        <Box
-          className={`work-experience-details ${selectedExperience ? 'active' : ''}`}
-          style={{ width: '100%' }}
-        >
+        <Box width="100%">
           {selectedExperience && (
             <WorkExperienceDetails experience={selectedExperience} />
           )}
         </Box>
 
-        <div className="work-experience-grid">
+        <Flex direction="column" gap="9" justify="center" align="center">
           {workExperiences.map((experience, index) => (
             <WorkItem
               key={index}
@@ -39,7 +36,7 @@ const WorkPage = () => {
               }
             />
           ))}
-        </div>
+        </Flex>
       </AnimatedPage>
     </PageWrapper>
   );

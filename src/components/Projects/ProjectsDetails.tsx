@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
 import { CodeIcon, ExternalLink } from 'lucide-react';
 import { ProjectsType } from '../../types/types';
+import GameContainer from './Pacman/GameContainer';
 
 export const ProjectDetails = ({ project }: { project: ProjectsType }) => {
   return (
@@ -14,6 +15,11 @@ export const ProjectDetails = ({ project }: { project: ProjectsType }) => {
           {project.description.join(' ')}
         </Text>
       </Box>
+      {project.id === 'pacman' && (
+        <Box className="mt-4">
+          <GameContainer />
+        </Box>
+      )}
       <Flex gap="3" className="mt-3" justify="start" align="center">
         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
           <Flex gap="1">
