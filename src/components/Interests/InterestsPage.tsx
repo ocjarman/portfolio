@@ -29,13 +29,30 @@ const InterestsPage = () => {
             {/* Carousel Section */}
             <Box className="relative mb-6">
               {/* Image Container */}
-              <Box className="w-[400px] h-[400px] mx-auto rounded-lg overflow-hidden">
-                <img
-                  src={interests[currentIndex].imagePath}
-                  alt={interests[currentIndex].title}
-                  className="w-full h-full object-cover transition-all duration-500 ease-in-out"
-                />
-              </Box>
+              <div
+                className="w-[400px] h-[400px] mx-auto overflow-hidden shadow-lg relative"
+                style={{ borderRadius: '16px' }}
+              >
+                {interests.map((interest, index) => (
+                  <div
+                    key={index}
+                    className="absolute w-full h-full transition-all duration-500 ease-in-out"
+                    style={{
+                      transform: `translateX(${(index - currentIndex) * 100}%)`,
+                      opacity: index === currentIndex ? 1 : 0,
+                      transition:
+                        'transform 500ms ease-in-out, opacity 500ms ease-in-out',
+                    }}
+                  >
+                    <img
+                      src={interest.imagePath}
+                      alt={interest.title}
+                      className="w-full h-full object-cover rounded-[16px]"
+                      style={{ borderRadius: '16px' }}
+                    />
+                  </div>
+                ))}
+              </div>
 
               {/* Navigation Buttons */}
               <Flex
@@ -46,16 +63,16 @@ const InterestsPage = () => {
                 <Button
                   variant="soft"
                   onClick={prevSlide}
-                  className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white/90 shadow-md"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-7 h-7 text-gray-700" />
                 </Button>
                 <Button
                   variant="soft"
                   onClick={nextSlide}
-                  className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 hover:bg-white/90 shadow-md"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-7 h-7 text-gray-700" />
                 </Button>
               </Flex>
             </Box>
