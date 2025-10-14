@@ -16,7 +16,7 @@ export const projects: ProjectsType[] = [
       'CSS',
       'Game Development',
     ],
-    githubUrl: 'https://github.com/ocjarman/portfolio',
+    githubUrl: 'https://github.com/ocjarman/portfolio/',
     backgroundColor: '#000',
   },
   {
