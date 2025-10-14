@@ -9,7 +9,7 @@ interface PageWrapperProps {
 const PageWrapper = ({ children, title }: PageWrapperProps) => {
   return (
     <Flex direction="column" height="100vh">
-      {title && <h2 className="">{title}</h2>}
+      {title && <h3 className="">{title}</h3>}
       {children}
     </Flex>
   );
