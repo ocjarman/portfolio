@@ -10,28 +10,28 @@ export const interests: Interest[] = [
     id: 'running',
     title: 'Running',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+      'Pushing boundaries and finding strength in every stride. From training sessions to race day, running has become an integral part of my journey towards personal growth and achievement. Each race represents months of dedication and the thrill of surpassing my own limits.',
     imagePath: '/interests/marathon.JPG',
   },
   {
     id: 'tennis-1',
     title: 'Tennis',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.',
+      'A lifelong hobby that began in childhood and continued in college. Proudly earned the Wingate MVP award for the tennis team and achieved an undefeated conference record in my second year. Tennis has taught me discipline, strategy, and the joy of continuous improvement.',
     imagePath: '/interests/wingate-tennis.JPG',
   },
   {
     id: 'tennis-2',
     title: 'Tennis',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.',
+      'A lifelong passion that began in childhood and flourished through college. Proudly earned the Wingate MVP award for the tennis team and achieved an undefeated conference record in my second year. Tennis has taught me discipline, strategy, and the joy of continuous improvement.',
     imagePath: '/interests/wingate-tennis-poole.jpg',
   },
   {
     id: 'parenting',
     title: 'Parenting',
     description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.',
+      'The most rewarding and transformative journey of my life. Being a mother has brought immeasurable joy, countless learning moments, and a deeper understanding of what truly matters. Every day brings new adventures and opportunities to grow together.',
     imagePath: '/interests/family.jpg',
   },
 ];
