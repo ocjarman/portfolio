@@ -17,8 +17,7 @@ export const projects: ProjectsType[] = [
       'Responsive Design',
     ],
     githubUrl: 'https://github.com/ocjarman/workout-generator',
-    liveUrl:
-      'https://workout-generator-997qleozy-olivia-jarmans-projects.vercel.app',
+    liveUrl: 'https://workout-generator-eta.vercel.app',
   },
   {
     id: 'pacman',
