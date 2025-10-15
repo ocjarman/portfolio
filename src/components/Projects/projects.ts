@@ -1,6 +1,26 @@
 import { ProjectsType } from './../../types/types';
 export const projects: ProjectsType[] = [
   {
+    id: 'workout-generator',
+    title: 'Workout Generator',
+    period: 'October 2025',
+    description: [
+      'Built a dynamic workout generator application that creates personalized exercise routines.',
+      'Implemented a user-friendly interface for customizing workout preferences and difficulty levels.',
+      'Utilized modern React patterns and Tailwind CSS for a responsive and polished design.',
+    ],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vercel',
+      'Responsive Design',
+    ],
+    githubUrl: 'https://github.com/ocjarman/workout-generator',
+    liveUrl:
+      'https://workout-generator-997qleozy-olivia-jarmans-projects.vercel.app',
+  },
+  {
     id: 'pacman',
     title: 'Pacman Game',
     period: 'October 2025',

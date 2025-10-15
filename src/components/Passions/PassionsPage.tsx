@@ -78,8 +78,8 @@ const PassionsPage = () => {
             </Box>
 
             {/* Text Content */}
-            <Box className="text-center px-4">
-              <Text size="5" weight="bold" className="mb-3 block">
+            <Box className="text-center" p="5">
+              <Text size="3" weight="bold" className="mb-3 block">
                 {passions[currentIndex].title}
               </Text>
               <Text size="2" className="leading-relaxed max-w-[600px] mx-auto">
