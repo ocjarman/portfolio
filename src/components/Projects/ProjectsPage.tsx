@@ -17,7 +17,7 @@ const ProjectsPage = () => {
       <AnimatedPage>
         <Flex gap="2" direction="column">
           {selectedProject && <ProjectDetails project={selectedProject} />}
-          <Flex gap="4" justify="center">
+          <Flex gap="4" justify="center" wrap="wrap">
             {projects.map((project, index) => (
               <Flex key={index}>
                 <Button
