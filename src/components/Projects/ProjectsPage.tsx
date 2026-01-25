@@ -1,36 +1,26 @@
-import { ProjectDetails } from './ProjectsDetails';
-import { useState } from 'react';
 import PageWrapper from '@/components/PageWrapper';
 import AnimatedPage from '@/components/AnimatedPage';
-import { Flex } from '@radix-ui/themes';
+import PageHeader from '@/components/PageHeader';
 import { projects } from './projects';
-import { ProjectsType } from '@/types/types';
+import ProjectCard from './ProjectCard';
 import '@/styles/ProjectGallery.css';
 
 const ProjectsPage = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(
-    null
-  );
-
   return (
-    <PageWrapper title="Projects">
+    <PageWrapper>
       <AnimatedPage>
-        <Flex gap="2" direction="column">
-          {selectedProject && <ProjectDetails project={selectedProject} />}
-          <Flex gap="4" justify="center" wrap="wrap">
-            {projects.map((project, index) => (
-              <button
-                key={index}
-                className={`project-button ${
-                  selectedProject?.id === project.id ? 'active' : ''
-                }`}
-                onClick={() => setSelectedProject(project)}
-              >
-                {project.title}
-              </button>
+        <div className="projects-page">
+          <PageHeader
+            title="Featured Projects"
+            subtitle="A showcase of my creative work and technical expertise"
+            highlightText="creative work"
+          />
+          <div className="projects-grid">
+            {projects.map(project => (
+              <ProjectCard key={project.id} project={project} />
             ))}
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </AnimatedPage>
     </PageWrapper>
   );

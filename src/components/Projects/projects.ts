@@ -18,26 +18,9 @@ export const projects: ProjectsType[] = [
     ],
     githubUrl: 'https://github.com/ocjarman/workout-generator',
     liveUrl: 'https://workout-generator-eta.vercel.app',
+    imageUrl: '/workout-gen-thumb.png',
   },
-  {
-    id: 'pacman',
-    title: 'Pacman Game',
-    period: 'October 2025',
-    description: [
-      'Interactive Pacman game built with React and TypeScript.',
-      'Features classic gameplay mechanics including ghost AI, score tracking, and multiple lives.',
-      'Implemented using modern React patterns and responsive design principles.',
-    ],
-    technologies: [
-      'React',
-      'TypeScript',
-      'Radix UI',
-      'CSS',
-      'Game Development',
-    ],
-    githubUrl: 'https://github.com/ocjarman/portfolio/',
-    backgroundColor: '#000',
-  },
+
   {
     id: 'assistant',
     title: 'Assistant',
@@ -55,7 +38,7 @@ export const projects: ProjectsType[] = [
       'Scheduling System',
     ],
     githubUrl: 'https://github.com/ocjarman/assistant.git',
-    imageUrl: '/assistant.jpg',
+    imageUrl: '/assistant-thumb.jpeg',
   },
   {
     id: 'codenames',
@@ -79,7 +62,7 @@ export const projects: ProjectsType[] = [
       'Render',
     ],
     githubUrl: 'https://github.com/2208-Capstone-Team-2/codenames',
-    imageUrl: '/codenames.jpg',
+    imageUrl: '/codenames-thumb.png',
   },
   {
     id: 'rrr',
@@ -104,7 +87,7 @@ export const projects: ProjectsType[] = [
       'Discogs API',
     ],
     githubUrl: 'https://github.com/2208-GS-Team-3/grace-shopper-team-three',
-    liveUrl: 'https://rightroundrecords.us',
-    imageUrl: '/rightround.jpg',
+    liveUrl: 'https://www.youtube.com/watch?v=DOeFHSPihdQ',
+    imageUrl: '/rrr-thumb.png',
   },
 ];

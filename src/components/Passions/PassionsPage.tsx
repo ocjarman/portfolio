@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import PageWrapper from '@/components/PageWrapper';
+import PageHeader from '@/components/PageHeader';
 import AnimatedPage from '@/components/AnimatedPage';
 import { passions } from './passions';
 import '@/styles/PassionsCarousel.css';
@@ -16,9 +17,15 @@ const PassionsPage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <PageWrapper title="Passions">
+    <PageWrapper>
       <AnimatedPage>
-        <Flex direction="column" align="center" className="w-full px-4 pt-8">
+        <Flex
+          direction="column"
+          align="center"
+          className="w-full"
+          style={{ padding: '4rem 2rem' }}
+        >
+          <PageHeader title="Passions" />
           {/* Main Content Container */}
           <Box className="w-full max-w-[800px] mx-auto">
             {/* Swiper Carousel Section */}

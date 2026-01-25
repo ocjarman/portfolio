@@ -1,10 +1,11 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
 import PageWrapper from '@/components/PageWrapper';
+import PageHeader from '@/components/PageHeader';
 import AnimatedPage from '@/components/AnimatedPage';
 
 const About = () => {
   return (
-    <PageWrapper title="About">
+    <PageWrapper>
       <AnimatedPage>
         <Flex
           direction="column"
@@ -12,7 +13,9 @@ const About = () => {
           align="center"
           maxWidth="800px"
           mx="auto"
+          style={{ padding: '4rem 2rem' }}
         >
+          <PageHeader title="About" />
           <Box
             width="200px"
             height="200px"

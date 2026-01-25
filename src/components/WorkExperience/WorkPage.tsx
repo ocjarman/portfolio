@@ -1,5 +1,6 @@
 import { Box } from '@radix-ui/themes';
 import PageWrapper from '@/components/PageWrapper';
+import PageHeader from '@/components/PageHeader';
 import { useState } from 'react';
 import { workExperiences } from './workExperiences';
 import AnimatedPage from '@/components/AnimatedPage';
@@ -12,9 +13,16 @@ const WorkPage = () => {
   const [selectedExperience, setSelectedExperience] =
     useState<WorkExperienceType | null>(null);
   return (
-    <PageWrapper title="Work Experience">
+    <PageWrapper>
       <AnimatedPage>
-        <Flex direction="column" align="center" width="100%" gap="6">
+        <Flex
+          direction="column"
+          align="center"
+          width="100%"
+          gap="6"
+          style={{ padding: '4rem 2rem' }}
+        >
+          <PageHeader title="Work Experience" />
           {selectedExperience && (
             <Box width="50%">
               <WorkExperienceDetails experience={selectedExperience} />
