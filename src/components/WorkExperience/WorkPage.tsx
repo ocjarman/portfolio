@@ -1,17 +1,11 @@
-import { Box } from '@radix-ui/themes';
 import PageWrapper from '@/components/PageWrapper';
 import PageHeader from '@/components/PageHeader';
-import { useState } from 'react';
 import { workExperiences } from './workExperiences';
 import AnimatedPage from '@/components/AnimatedPage';
-import { WorkExperienceType } from '@/types/types';
-import WorkExperienceDetails from './WorkExperienceDetails';
 import WorkItem from './WorkItem';
 import { Flex } from '@radix-ui/themes';
 
 const WorkPage = () => {
-  const [selectedExperience, setSelectedExperience] =
-    useState<WorkExperienceType | null>(null);
   return (
     <PageWrapper>
       <AnimatedPage>
@@ -19,37 +13,21 @@ const WorkPage = () => {
           direction="column"
           align="center"
           width="100%"
-          gap="6"
-          style={{ padding: '4rem 2rem' }}
+          gap="4"
+          style={{ padding: '2rem 2rem' }}
         >
           <PageHeader title="Work Experience" />
-          {selectedExperience && (
-            <Box width="50%">
-              <WorkExperienceDetails experience={selectedExperience} />
-            </Box>
-          )}
 
           <Flex
             direction="column"
-            gap="9"
+            gap="0"
             justify="center"
             align="center"
             width="100%"
-            style={{ padding: '2rem' }}
+            style={{ maxWidth: '900px' }}
           >
-            {workExperiences.map((experience, index) => (
-              <WorkItem
-                key={index}
-                experience={experience}
-                isSelected={selectedExperience?.company === experience.company}
-                onClick={() =>
-                  setSelectedExperience(
-                    selectedExperience?.company === experience.company
-                      ? null
-                      : experience
-                  )
-                }
-              />
+            {workExperiences.map(experience => (
+              <WorkItem key={experience.id} experience={experience} />
             ))}
           </Flex>
         </Flex>
