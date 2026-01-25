@@ -36,7 +36,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--gray-11);
+  color: var(--violet-10);
 }
 
 html {
@@ -83,12 +83,15 @@ button {
   background-color: var(--color-panel);
   color: var(--gray-12);
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
 }
 button:hover {
-  background-color: var(--gray-a3);
+  background-color: var(--violet-3);
+  border-color: var(--violet-7);
 }
 button:focus,
 button:focus-visible {
-  outline: 2px solid var(--gray-a7);
+  outline: 2px solid var(--violet-8);
 }

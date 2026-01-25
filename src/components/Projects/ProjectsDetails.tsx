@@ -15,11 +15,6 @@ export const ProjectDetails = ({ project }: { project: ProjectsType }) => {
           {project.description.join(' ')}
         </Text>
       </Box>
-      {project.id === 'pacman' && (
-        <Box className="mt-4">
-          <GameContainer />
-        </Box>
-      )}
       <Flex gap="3" className="mt-3" justify="start" align="center">
         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
           <Flex gap="1">
@@ -36,6 +31,11 @@ export const ProjectDetails = ({ project }: { project: ProjectsType }) => {
           </a>
         )}
       </Flex>
+      {project.id === 'pacman' && (
+        <Box className="mt-4">
+          <GameContainer />
+        </Box>
+      )}
     </Flex>
   );
 };

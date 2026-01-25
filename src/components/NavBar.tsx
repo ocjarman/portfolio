@@ -25,11 +25,27 @@ const NavBar = () => {
       </Flex>
 
       <Flex align="center" gap="3" wrap="wrap" mr="4">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/work">Work</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/passions">Passions</Link>
+        <Link to="/" className="hover:text-accent-solid transition-colors">
+          Home
+        </Link>
+        <Link to="/about" className="hover:text-accent-solid transition-colors">
+          About
+        </Link>
+        <Link to="/work" className="hover:text-accent-solid transition-colors">
+          Work
+        </Link>
+        <Link
+          to="/projects"
+          className="hover:text-accent-solid transition-colors"
+        >
+          Projects
+        </Link>
+        <Link
+          to="/passions"
+          className="hover:text-accent-solid transition-colors"
+        >
+          Passions
+        </Link>
       </Flex>
       <Flex align="center" wrap="wrap">
         <Flex align="center" justify="center" gap="2">
