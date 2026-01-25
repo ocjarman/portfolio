@@ -1,11 +1,11 @@
 import { ProjectDetails } from './ProjectsDetails';
 import { useState } from 'react';
-import PageWrapper from '../PageWrapper';
-import AnimatedPage from '../AnimatedPage';
+import PageWrapper from '@/components/PageWrapper';
+import AnimatedPage from '@/components/AnimatedPage';
 import { Flex } from '@radix-ui/themes';
 import { projects } from './projects';
-import { ProjectsType } from '../../types/types';
-import '../../styles/ProjectGallery.css';
+import { ProjectsType } from '@/types/types';
+import '@/styles/ProjectGallery.css';
 
 const ProjectsPage = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(

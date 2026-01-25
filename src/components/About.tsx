@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
-import PageWrapper from './PageWrapper';
-import AnimatedPage from './AnimatedPage';
+import PageWrapper from '@/components/PageWrapper';
+import AnimatedPage from '@/components/AnimatedPage';
 
 const About = () => {
   return (

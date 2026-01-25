@@ -1,4 +1,4 @@
-import { ProjectsType } from './../../types/types';
+import { ProjectsType } from '@/types/types';
 export const projects: ProjectsType[] = [
   {
     id: 'workout-generator',

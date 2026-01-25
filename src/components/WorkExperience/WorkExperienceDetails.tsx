@@ -1,4 +1,4 @@
-import { WorkExperienceType } from '../../types/types';
+import { WorkExperienceType } from '@/types/types';
 import { Flex, Text, Box } from '@radix-ui/themes';
 
 const WorkExperienceDetails = ({

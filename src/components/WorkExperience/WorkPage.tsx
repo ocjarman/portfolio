@@ -1,9 +1,9 @@
 import { Box } from '@radix-ui/themes';
-import PageWrapper from '../PageWrapper';
+import PageWrapper from '@/components/PageWrapper';
 import { useState } from 'react';
 import { workExperiences } from './workExperiences';
-import AnimatedPage from '../AnimatedPage';
-import { WorkExperienceType } from '../../types/types';
+import AnimatedPage from '@/components/AnimatedPage';
+import { WorkExperienceType } from '@/types/types';
 import WorkExperienceDetails from './WorkExperienceDetails';
 import WorkItem from './WorkItem';
 import { Flex } from '@radix-ui/themes';

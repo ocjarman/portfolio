@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Box, Text, Flex, Button } from '@radix-ui/themes';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import PageWrapper from '../PageWrapper';
-import AnimatedPage from '../AnimatedPage';
+import PageWrapper from '@/components/PageWrapper';
+import AnimatedPage from '@/components/AnimatedPage';
 import { passions } from './passions';
 
 const PassionsPage = () => {

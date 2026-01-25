@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@radix-ui/themes';
 import { CodeIcon, ExternalLink } from 'lucide-react';
-import { ProjectsType } from '../../types/types';
+import { ProjectsType } from '@/types/types';
 import GameContainer from './Pacman/GameContainer';
 
 export const ProjectDetails = ({ project }: { project: ProjectsType }) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, Flex } from '@radix-ui/themes';
-import PacmanGame from '../Pacman/PacmanGame';
+import PacmanGame from './PacmanGame';
 
 const GameContainer = () => {
   const [isPlaying, setIsPlaying] = useState(false);

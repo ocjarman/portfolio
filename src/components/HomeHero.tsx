@@ -1,7 +1,7 @@
 import { Flex, Text } from '@radix-ui/themes';
 import { motion } from 'framer-motion';
-import '../styles/HomeHero.css';
-import PageWrapper from './PageWrapper';
+import '@/styles/HomeHero.css';
+import PageWrapper from '@/components/PageWrapper';
 
 const HomeHero = () => {
   return (

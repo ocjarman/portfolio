@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Theme as CustomTheme } from '../lib/utils';
+import { Theme as CustomTheme } from '@/lib/utils';
 
 interface ThemeContextType {
   theme: CustomTheme;

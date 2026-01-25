@@ -1,4 +1,4 @@
-import { WorkExperienceType } from '../../types/types';
+import { WorkExperienceType } from '@/types/types';
 export const workExperiences: WorkExperienceType[] = [
   {
     id: '1',
