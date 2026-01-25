@@ -1,24 +1,19 @@
-import { useState } from 'react';
-import { Box, Text, Flex, Button } from '@radix-ui/themes';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Box, Text, Flex } from '@radix-ui/themes';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 import PageWrapper from '@/components/PageWrapper';
 import AnimatedPage from '@/components/AnimatedPage';
 import { passions } from './passions';
+import '@/styles/PassionsCarousel.css';
 
 const PassionsPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex(prevIndex =>
-      prevIndex === passions.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(prevIndex =>
-      prevIndex === 0 ? passions.length - 1 : prevIndex - 1
-    );
-  };
+  const swiperRef = useRef<any>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <PageWrapper title="Passions">
@@ -26,82 +21,56 @@ const PassionsPage = () => {
         <Flex direction="column" align="center" className="w-full px-4 pt-8">
           {/* Main Content Container */}
           <Box className="w-full max-w-[800px] mx-auto">
-            {/* Carousel Section */}
-            <Box className="relative mb-6">
-              {/* Image Container */}
-              <div
-                className="w-[400px] h-[400px] mx-auto overflow-hidden shadow-lg relative"
-                style={{ borderRadius: '16px' }}
-              >
-                {passions.map((passion, index) => (
-                  <div
-                    key={index}
-                    className="absolute w-full h-full transition-all duration-500 ease-in-out"
-                    style={{
-                      transform: `translateX(${(index - currentIndex) * 100}%)`,
-                      opacity: index === currentIndex ? 1 : 0,
-                      transition:
-                        'transform 500ms ease-in-out, opacity 500ms ease-in-out',
-                    }}
-                  >
-                    <img
-                      src={passion.imagePath}
-                      alt={passion.title}
-                      className="w-full h-full object-cover rounded-[16px]"
-                      style={{ borderRadius: '16px' }}
-                    />
-                  </div>
-                ))}
-              </div>
+            {/* Swiper Carousel Section */}
+            <Swiper
+              ref={swiperRef}
+              modules={[Navigation, Pagination, EffectFade, Autoplay]}
+              effect="fade"
+              grabCursor
+              loop
+              onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
+              fadeEffect={{
+                crossFade: true,
+              }}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              navigation={{
+                nextEl: '.swiper-button-next-custom',
+                prevEl: '.swiper-button-prev-custom',
+              }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              speed={800}
+              className="passions-swiper"
+            >
+              {passions.map((passion, index) => (
+                <SwiperSlide key={index} className="passions-slide">
+                  <img
+                    src={passion.imagePath}
+                    alt={passion.title}
+                    className="w-full h-full object-cover"
+                  />
+                </SwiperSlide>
+              ))}
 
-              {/* Navigation Buttons */}
-              <Flex
-                className="absolute inset-x-[-50px] top-1/2 transform -translate-y-1/2"
-                justify="between"
-                align="center"
-              >
-                <Button
-                  variant="soft"
-                  onClick={prevSlide}
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
-                >
-                  <ChevronLeft className="w-7 h-7 text-gray-700" />
-                </Button>
-                <Button
-                  variant="soft"
-                  onClick={nextSlide}
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
-                >
-                  <ChevronRight className="w-7 h-7 text-gray-700" />
-                </Button>
-              </Flex>
-            </Box>
+              {/* Custom Navigation Buttons */}
+              <div className="swiper-button-prev-custom"></div>
+              <div className="swiper-button-next-custom"></div>
+            </Swiper>
 
             {/* Text Content */}
             <Box className="text-center" p="5">
               <Text size="3" weight="bold" className="mb-3 block">
-                {passions[currentIndex].title}
+                {passions[activeIndex]?.title}
               </Text>
               <Text size="2" className="leading-relaxed max-w-[600px] mx-auto">
-                {passions[currentIndex].description}
+                {passions[activeIndex]?.description}
               </Text>
             </Box>
-
-            {/* Dots Navigation */}
-            <Flex gap="2" justify="center" mt="4">
-              {passions.map((_, index) => (
-                <Button
-                  key={index}
-                  variant="soft"
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full p-0 ${
-                    currentIndex === index
-                      ? 'bg-gray-800 dark:bg-gray-200'
-                      : 'bg-gray-300 dark:bg-gray-700'
-                  }`}
-                />
-              ))}
-            </Flex>
           </Box>
         </Flex>
       </AnimatedPage>

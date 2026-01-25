@@ -1,0 +1,145 @@
+.passions-swiper {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.passions-slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.passions-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pagination Styles */
+.passions-swiper .swiper-pagination {
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.passions-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.passions-swiper .swiper-pagination-bullet-active {
+  background-color: white;
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button-prev-custom::after,
+.swiper-button-next-custom::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+.swiper-button-prev-custom::after {
+  transform: rotate(-135deg);
+}
+
+.swiper-button-next-custom::after {
+  transform: rotate(45deg);
+}
+
+.swiper-button-prev-custom {
+  left: 12px;
+}
+
+.swiper-button-next-custom {
+  right: 12px;
+}
+
+/* Dark mode support */
+:root.dark .swiper-button-prev-custom,
+:root.dark .swiper-button-next-custom {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+:root.dark .swiper-button-prev-custom::after,
+:root.dark .swiper-button-next-custom::after {
+  border-color: #f5f5f5;
+}
+
+:root.dark .passions-swiper .swiper-pagination-bullet {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+:root.dark .passions-swiper .swiper-pagination-bullet-active {
+  background-color: #f5f5f5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .passions-swiper {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-prev-custom {
+    left: 10px;
+  }
+
+  .swiper-button-next-custom {
+    right: 10px;
+  }
+}
+
+/* Fade effect transition smoothness */
+.passions-swiper .swiper-wrapper {
+  transition-timing-function: ease-in-out;
+}
