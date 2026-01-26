@@ -30,36 +30,35 @@ const About = () => {
           </Box>
 
           <Text size="3" className="text-center">
-            Hi! I'm Olivia, a software engineer with a unique journey that
-            combines education, athletics, and technology. My path began at
-            Wingate University where I played collegiate tennis, before
-            transferring to the University of Florida to complete my education.
+            Hi! I'm Olivia, a frontend engineer, mom of two young kids, runner,
+            and coffee enthusiast. I live with my husband, our dog, and our two
+            little ones who keep life interesting (and busy!).
           </Text>
           <br />
 
           <Text size="3" className="text-center">
-            After graduating, I dedicated myself to education, working as a
-            teacher and later as a nonprofit education program manager. This
-            experience gave me valuable insights into how technology can
-            transform learning and improve lives. Driven by this passion, I took
-            the leap into software engineering by completing a coding bootcamp,
-            successfully transitioning into a new career in tech.
+            My path to tech wasn't linear—I started in education, working as a
+            teacher and later managing nonprofit education programs. That
+            experience showed me how technology can transform learning, which
+            led me to complete a coding bootcamp and make the jump into software
+            engineering. I'm grateful for that diverse background; it helps me
+            bring a unique perspective to every project.
           </Text>
           <br />
 
           <Text size="3" className="text-center">
-            Beyond my professional life, I'm an accomplished runner who has
-            completed the NYC Marathon, demonstrating my commitment to personal
-            growth and perseverance. This same determination has been
-            instrumental in my career transition and continues to drive my work
-            as a software engineer.
+            These days, I mostly code during work hours (as any parent of young
+            kids knows, that's the reality). When I do have free time, I
+            prioritize running, managing my house/kids, and various homeowner
+            projects.
           </Text>
           <br />
 
           <Text size="3" className="text-center">
-            I believe in creating technology that makes a positive impact,
-            drawing from my diverse background in education, athletics, and
-            software development to bring unique perspectives to every project.
+            I believe in building technology that makes a real difference,
+            whether that's creating intuitive user experiences or solving
+            problems that matter. When life gets busy, I've learned to make
+            every moment count.
           </Text>
         </Flex>
       </AnimatedPage>

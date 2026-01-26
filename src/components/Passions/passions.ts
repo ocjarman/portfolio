@@ -8,30 +8,20 @@ interface Passion {
 export const passions: Passion[] = [
   {
     id: 'parenting',
-    title: 'Parenting',
-    description:
-      'The most rewarding and transformative journey of my life. My greatest joy and priority is raising my two beautiful kids, watching them grow, learn, and discover the world. Being their mother has brought immeasurable happiness, countless learning moments, and a deeper understanding of what truly matters. Every day brings new adventures and opportunities to grow together.',
+    title: 'Family Life',
+    description: `My two young kids are my world. Life is busy, chaotic, and wonderful. Between work and parenting, there isn't much time for hobbies these days, but I wouldn't have it any other way. Watching them grow and learn is the best part of my day.`,
     imagePath: './passions/fam.JPG',
   },
   {
     id: 'running',
     title: 'Running',
-    description:
-      'Pushing boundaries and finding strength in every stride. From training sessions to race day, running has become an integral part of my journey towards personal growth and achievement. Each race represents months of dedication and the thrill of surpassing my own limits.',
+    description: `Running is my sanity and my strength. I completed the NYC Marathon, and these days, I squeeze in runs whenever I can. It's not always easy to find the time with two little ones, but it's worth it—running keeps me grounded, energized, and ready to tackle whatever comes next.`,
     imagePath: './passions/marathon.JPG',
   },
   {
-    id: 'tennis-1',
+    id: 'tennis',
     title: 'Tennis',
-    description:
-      'A lifelong hobby that began in childhood and continued in college. Proudly earned the Wingate MVP award for the tennis team and achieved an undefeated conference record in my second year. Tennis has taught me discipline, strategy, and the joy of continuous improvement.',
+    description: `A sport I loved growing up and through college, where I earned an MVP award and had an undefeated conference record. While I don't play much these days, tennis taught me discipline, strategy, and the value of practice—lessons that still serve me well.`,
     imagePath: './passions/wingate-tennis.JPG',
-  },
-  {
-    id: 'tennis-2',
-    title: 'Tennis',
-    description:
-      'A lifelong passion that began in childhood and flourished through college. Proudly earned the Wingate MVP award for the tennis team and achieved an undefeated conference record in my second year. Tennis has taught me discipline, strategy, and the joy of continuous improvement.',
-    imagePath: './passions/wingate-tennis-poole.jpg',
   },
 ];
