@@ -1,14 +1,14 @@
 /* Page Header - Reusable header component */
 .page-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .page-header-title {
-  font-size: 3.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin: 0;
   background: linear-gradient(
@@ -25,9 +25,9 @@
 }
 
 .page-header-accent {
-  width: 120px;
-  height: 4px;
-  margin: 0 auto 1.5rem;
+  width: 80px;
+  height: 3px;
+  margin: 0 auto 1rem;
   background: linear-gradient(
     135deg,
     var(--violet-9) 0%,
@@ -38,7 +38,7 @@
 }
 
 .page-header-subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--gray-11);
   margin: 0;
   font-weight: 400;
@@ -52,26 +52,26 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .page-header-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .page-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .page-header-title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 
   .page-header-subtitle {
-    font-size: 1rem;
+    font-size: 0.9375rem;
   }
 }
 
 @media (max-width: 480px) {
   .page-header-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
