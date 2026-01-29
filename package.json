@@ -12,6 +12,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint",
+    "prepush": "bash scripts/check-before-push.sh",
     "preview": "vite preview"
   },
   "dependencies": {

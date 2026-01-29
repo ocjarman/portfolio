@@ -8,6 +8,7 @@ import About from '@/components/About';
 import HomeHero from '@/components/HomeHero';
 import ProjectsPage from '@/components/Projects/ProjectsPage';
 import PassionsPage from '@/components/Passions/PassionsPage';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 function Home() {
   return <HomeHero />;
@@ -16,6 +17,7 @@ function Home() {
 function App() {
   return (
     <ThemeProvider>
+      <AnimatedBackground />
       <Router basename="/portfolio/">
         <NavBar />
         <Routes>
