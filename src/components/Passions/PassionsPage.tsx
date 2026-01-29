@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
+import type { ComponentRef } from 'react';
 import { Box, Text, Flex } from '@radix-ui/themes';
-import type SwiperType from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -14,7 +14,7 @@ import { passions } from './passions';
 import '@/styles/PassionsCarousel.css';
 
 const PassionsPage = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef = useRef<ComponentRef<typeof Swiper> | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
