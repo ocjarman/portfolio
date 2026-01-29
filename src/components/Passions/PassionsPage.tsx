@@ -23,12 +23,11 @@ const PassionsPage = () => {
         <Flex
           direction="column"
           align="center"
-          className="w-full"
-          style={{ padding: '4rem 2rem' }}
+          className="passions-page-content w-full"
         >
           <PageHeader title="Passions" />
           {/* Main Content Container */}
-          <Box className="w-full max-w-[800px] mx-auto">
+          <Box className="passions-page-inner w-full max-w-[800px] mx-auto">
             {/* Swiper Carousel Section */}
             <Swiper
               ref={swiperRef}
@@ -37,9 +36,7 @@ const PassionsPage = () => {
               grabCursor
               loop
               onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
-              fadeEffect={{
-                crossFade: true,
-              }}
+              fadeEffect={{ crossFade: true }}
               pagination={{
                 clickable: true,
                 dynamicBullets: true,
@@ -53,6 +50,10 @@ const PassionsPage = () => {
                 disableOnInteraction: false,
               }}
               speed={800}
+              threshold={0}
+              touchReleaseOnEdges
+              longSwipesRatio={0.3}
+              resistanceRatio={0.85}
               className="passions-swiper"
             >
               {passions.map((passion, index) => (
@@ -71,11 +72,11 @@ const PassionsPage = () => {
             </Swiper>
 
             {/* Text Content */}
-            <Box className="text-center" p="5">
-              <Text size="3" weight="bold" className="mb-3 block">
+            <Box className="passions-text-content text-center">
+              <Text size="3" weight="bold" className="passions-title block">
                 {passions[activeIndex]?.title}
               </Text>
-              <Text size="2" className="leading-relaxed max-w-[600px] mx-auto">
+              <Text size="2" className="passions-description leading-relaxed">
                 {passions[activeIndex]?.description}
               </Text>
             </Box>

@@ -1,3 +1,31 @@
+/* Passions page layout */
+.passions-page-content {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.passions-page-inner {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.passions-text-content {
+  padding: 2rem 1.5rem;
+}
+
+.passions-title {
+  margin-bottom: 0.75rem;
+}
+
+.passions-description {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .passions-swiper {
   width: 100%;
   max-width: 400px;
@@ -6,6 +34,9 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  /* Better touch on mobile: allow vertical page scroll */
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .passions-slide {
@@ -27,7 +58,9 @@
   bottom: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
+  padding: 8px 0;
 }
 
 .passions-swiper .swiper-pagination-bullet {
@@ -38,6 +71,7 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .passions-swiper .swiper-pagination-bullet-active {
@@ -117,25 +151,150 @@
   background-color: #f5f5f5;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Tablet */
+@media (max-width: 768px) {
+  .passions-page-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .passions-page-inner {
+    padding: 0 0.75rem;
+  }
+
+  .passions-text-content {
+    padding: 1.75rem 1rem;
+  }
+
   .passions-swiper {
     max-width: 100%;
-    height: 300px;
+    height: 360px;
   }
 
   .swiper-button-prev-custom,
   .swiper-button-next-custom {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
 
   .swiper-button-prev-custom {
-    left: 10px;
+    left: 8px;
   }
 
   .swiper-button-next-custom {
-    right: 10px;
+    right: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .passions-page-content {
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .passions-page-inner {
+    padding: 0;
+    width: 100%;
+  }
+
+  .passions-text-content {
+    padding: 1.5rem 0;
+  }
+
+  /* Full-bleed carousel on mobile */
+  .passions-swiper {
+    max-width: none;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 280px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .passions-slide {
+    border-radius: 0;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 44px;
+    height: 44px;
+  }
+
+  .swiper-button-prev-custom {
+    left: 8px;
+  }
+
+  .swiper-button-next-custom {
+    right: 8px;
+  }
+
+  .passions-swiper .swiper-pagination {
+    bottom: 16px;
+  }
+
+  /* 44px min tap target for pagination on touch */
+  .passions-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .passions-swiper .swiper-pagination-bullet::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+  }
+
+  .passions-swiper .swiper-pagination-bullet-active {
+    width: 24px;
+  }
+}
+
+/* Small mobile – touch-friendly, hide arrows so swipe + dots only */
+@media (max-width: 480px) {
+  .passions-page-content {
+    padding: 1.5rem 0;
+    padding-left: max(0, env(safe-area-inset-left));
+    padding-right: max(0, env(safe-area-inset-right));
+  }
+
+  .passions-text-content .passions-title {
+    font-size: 1.5rem;
+  }
+
+  .passions-text-content .passions-description {
+    font-size: 0.9375rem;
+  }
+
+  .passions-page-inner {
+    padding: 0;
+  }
+
+  .passions-text-content {
+    padding: 1.25rem 0.75rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  .passions-swiper {
+    height: 50vw;
+    min-height: 220px;
+    max-height: 280px;
+  }
+
+  /* Hide nav arrows on small screens – swipe and pagination only */
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    display: none;
+  }
+
+  .passions-swiper .swiper-pagination {
+    bottom: 12px;
   }
 }
 
