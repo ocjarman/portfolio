@@ -15,7 +15,7 @@ const HomeHero = () => {
         >
           <Text
             size="6"
-            className="bg-gradient-to-r from-accent-solid to-violet-11 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-accent-solid to-[var(--blue-11)] bg-clip-text text-transparent"
           >
             <span>Olivia Jarman</span>
           </Text>

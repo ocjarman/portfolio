@@ -13,9 +13,9 @@
   margin: 0;
   background: linear-gradient(
     135deg,
-    var(--violet-9) 0%,
-    var(--violet-11) 50%,
-    var(--violet-9) 100%
+    var(--blue-7) 0%,
+    var(--blue-9) 50%,
+    var(--blue-7) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -30,9 +30,9 @@
   margin: 0 auto 1rem;
   background: linear-gradient(
     135deg,
-    var(--violet-9) 0%,
-    var(--violet-11) 50%,
-    var(--violet-9) 100%
+    var(--blue-7) 0%,
+    var(--blue-9) 50%,
+    var(--blue-7) 100%
   );
   border-radius: 2px;
 }
@@ -45,7 +45,7 @@
 }
 
 .page-header-subtitle-highlight {
-  color: var(--violet-10);
+  color: var(--blue-8);
   font-weight: 500;
 }
 

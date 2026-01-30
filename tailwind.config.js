@@ -29,12 +29,12 @@ export default {
         'text-success': 'var(--green-11)',
         'text-warning': 'var(--yellow-11)',
         'text-info': 'var(--blue-11)',
-        // Violet accent colors for light/dark mode
-        'accent-bg': 'var(--violet-3)',
-        'accent-border': 'var(--violet-7)',
-        'accent-solid': 'var(--violet-9)',
-        'accent-hover': 'var(--violet-10)',
-        'accent-contrast': 'var(--violet-12)',
+        // Blue accent
+        'accent-bg': 'var(--blue-3)',
+        'accent-border': 'var(--blue-7)',
+        'accent-solid': 'var(--blue-9)',
+        'accent-hover': 'var(--blue-10)',
+        'accent-contrast': 'var(--blue-12)',
       },
     },
   },

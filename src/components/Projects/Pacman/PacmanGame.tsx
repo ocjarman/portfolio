@@ -231,7 +231,7 @@ const PacmanGame = () => {
       style={{ backgroundColor: 'black' }}
     >
       <Flex gap="4">
-        <Text color="violet" size="6">
+        <Text color="blue" size="6">
           Score: {score}
         </Text>
         <Text color="red" size="6">
